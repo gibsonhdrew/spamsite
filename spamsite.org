@@ -123,7 +123,7 @@ WP api usage:
        <<vueLink>>
        <<nav>>
        <div id='homeBody' class='pageBody'>
-           <h3>Home Page</h3>
+           <h2>Home Page</h2>
            <p>The home page goes here</p>
        </div>
        </script>
@@ -144,7 +144,7 @@ WP api usage:
        <<nav>>
        <div id='homeBody' class='pageBody'>
            <div v-for="post in posts">
-               <h3 v-html="post.title"></h3>
+               <h2 v-html="post.title"></h2>
                <p v-html="post.content"></p>
            </div>
        </div>
@@ -204,7 +204,7 @@ WP api usage:
        <<nav>>
        <div id='homeBody' class='pageBody'>
            <div v-for="post in posts">
-               <h3 v-html="post.title"></h3>
+               <h2 v-html="post.title"></h2>
                <p v-html="post.content"></p>
            </div>
 
