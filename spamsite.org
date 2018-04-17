@@ -38,9 +38,9 @@ WP api usage:
        <div class='nav'>
            <a href="./index.html"><h2 class='pageTitle'>Specially Processed American Me</h2></a>
            <div class='navItems'>
-               <a href="./upcoming.html"><h3 class='navItem'>Upcoming</h3></a>
                <a href="./about.html"><h3 class='navItem'>About</h3></a>
                <a href="./recipes.html"><h3 class='navItem'>Stories and Recipes</h3></a>
+               <a href="./contact.html"><h3 class='navItem'>Contact</h3></a>
            </div>
        </div>
    #+END_SRC 
@@ -132,26 +132,6 @@ WP api usage:
        <<vueLink>>
        <<nav>>
        <div id='homeBody' class='pageBody'>
-           <h2>Home Page</h2>
-           <p>The home page goes here</p>
-       </div>
-       </script>
-   </body>
-   </html>
-   #+END_SRC 
-
-** ./upcoming.html
-   components 
-     [[indexhead]]
-     [[vueLink]]
-     [[nav]]
-
-   #+BEGIN_SRC html :noweb yes :tangle ./upcoming.html
-   <<indexhead>>
-   <body>
-       <<vueLink>>
-       <<nav>>
-       <div id='homeBody' class='pageBody'>
            <div v-for="post in posts">
                <h2 v-html="post.title"></h2>
                <p v-html="post.content"></p>
@@ -181,7 +161,7 @@ WP api usage:
    </html>
    #+END_SRC 
 
-** ./services.html
+** ./about.html
    components 
      [[indexhead]]
      [[vueLink]]
@@ -249,5 +229,22 @@ WP api usage:
    </html>
    #+END_SRC 
 
+** ./contact.html
+   components 
+     [[indexhead]]
+     [[vueLink]]
+     [[nav]]
 
+   #+BEGIN_SRC html :noweb yes :tangle ./contact.html
+   <<indexhead>>
+   <body>
+       <<vueLink>>
+       <<nav>>
+       <div class='pageBody'>
+           <h2>Contact</h2>
+           <p>This is the contact page.</p>
+       </div>
+   </body>
+   </html>
+   #+END_SRC 
 

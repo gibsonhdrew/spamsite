@@ -78,15 +78,36 @@
     <div class='nav'>
         <a href="./index.html"><h2 class='pageTitle'>Specially Processed American Me</h2></a>
         <div class='navItems'>
-            <a href="./upcoming.html"><h3 class='navItem'>Upcoming</h3></a>
             <a href="./about.html"><h3 class='navItem'>About</h3></a>
             <a href="./recipes.html"><h3 class='navItem'>Stories and Recipes</h3></a>
+            <a href="./contact.html"><h3 class='navItem'>Contact</h3></a>
         </div>
     </div>
     <div id='homeBody' class='pageBody'>
-        <h2>Home Page</h2>
-        <p>The home page goes here</p>
+        <div v-for="post in posts">
+            <h2 v-html="post.title"></h2>
+            <p v-html="post.content"></p>
+        </div>
     </div>
+    <script>
+        const homeBody = new Vue({
+            el: '#homeBody',
+            data: {
+                posts: []
+            },
+            created () {
+                fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
+                    .then(response => response.json())
+                    .then(json => {
+                        console.log(json)
+                        for (var x of json) {
+                            if (x.tags[0] == "35776") {
+                                this.posts.push({"title": x.title.rendered, "content": x.content.rendered})
+                            }
+                        }
+                    })
+            }
+        })
     </script>
 </body>
 </html>
