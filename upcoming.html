@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1' />
+    <title>Specially Processed American Me</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <style media='screen' type='text/css'>
+        body {
+            font-family: "Open Sans", sans-serif;
+            margin-top: 0;
+            margin-left: 0;
+            width: 100vw;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .pageTitle {
+            border: 2px solid green;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            max-height: 40px;
+            margin: 0;
+            text-align: center;
+        }
+        .nav {
+            border: 2px solid blue;
+            text-align: center;
+        }
+        .navItems {
+            display: inline-block;
+            border: 2px solid cyan;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .navItem {
+            display: inline-block;
+            width: 220px;
+            border: 2px solid violet;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            margin: 0;
+        }
+        .pageBody {
+            border: 2px solid red;
+            margin-left: 13vw;
+            margin-right: 13vw;
+        }
+    </style>
+    <style media='screen' type='text/css'>
+        @media screen and (max-device-width: 800px) {
+        
+        }
+    </style>
+</head>
+<body>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <!-- production version, optimized for size and speed -->
+    <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <div class='nav'>
+        <a href="./index.html"><h2 class='pageTitle'>Specially Processed American Me</h2></a>
+        <div class='navItems'>
+            <a href="./upcoming.html"><h3 class='navItem'>Upcoming</h3></a>
+            <a href="./about.html"><h3 class='navItem'>About</h3></a>
+            <a href="./recipes.html"><h3 class='navItem'>Stories and Recipes</h3></a>
+        </div>
+    </div>
+    <div class='pageBody'>
+        <h2>Upcoming</h2>
+        <p>Upcoming posts go here, from Vue</p>
+    </div>
+</body>
+</html>
