@@ -12,7 +12,11 @@
             margin-left: 0;
             width: 100vw;
         }
-        
+        .size-full {
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+        }
         a {
             text-decoration: none;
             color: inherit;
@@ -71,24 +75,9 @@
         </div>
     </div>
     <div id='homeBody' class='pageBody'>
-        <h2>Home</h2>
-        <p>This is the home page.</p>
+        <h3>Home Page</h3>
+        <p>The home page goes here</p>
     </div>
-    <script>
-        const homeBody = new Vue({
-            el: '#homeBody',
-            data: {
-                posts: []
-            },
-            created () {
-                fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
-                    .then(response => response.json())
-                    .then(json => {
-                        console.log(json)
-
-                    })
-            }
-        })
     </script>
 </body>
 </html>

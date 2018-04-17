@@ -12,7 +12,11 @@
             margin-left: 0;
             width: 100vw;
         }
-        
+        .size-full {
+            min-width: 100%;
+            max-width: 100%;
+            width: 100%;
+        }
         a {
             text-decoration: none;
             color: inherit;
@@ -70,9 +74,39 @@
             <a href="./recipes.html"><h3 class='navItem'>Stories and Recipes</h3></a>
         </div>
     </div>
-    <div class='pageBody'>
-        <h2>Recipes</h2>
-        <p>This is where the recipes will go.</p>
+    <div id='homeBody' class='pageBody'>
+        <div v-for="post in posts">
+            <h3 v-html="post.title"></h3>
+            <p v-html="post.content"></p>
+        </div>
+
+        <h3>Submit your own recipe:</h3>
+        <form action="https://formspree.io/gibsonhdrew@gmail.com" method="POST">
+            <input type="text" name="Your Name">
+            <input type="text" name="Recipe Name">
+            <input type="text" name="Recipe">
+            <input type="submit" value="Send">
+        </form> 
     </div>
+    <script>
+        const homeBody = new Vue({
+            el: '#homeBody',
+            data: {
+                posts: []
+            },
+            created () {
+                fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
+                    .then(response => response.json())
+                    .then(json => {
+                        console.log(json)
+                        for (var x of json) {
+                            if (x.tags[0] == "2832") {
+                                this.posts.push({"title": x.title.rendered, "content": x.content.rendered})
+                            }
+                        }
+                    })
+            }
+        })
+    </script>
 </body>
 </html>
