@@ -4,18 +4,24 @@
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1' />
     <title>Specially Processed American Me</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <style media='screen' type='text/css'>
         body {
-            font-family: "Open Sans", sans-serif;
+            font-family: "Crimson Text", serif;
             margin-top: 0;
             margin-left: 0;
             width: 100vw;
         }
+        .submitRecipeForm {
+            display: block;
+        }
+        .blogText {
+            font-size: 17px;
+        }
         .size-full {
-            min-width: 100%;
-            max-width: 100%;
-            width: 100%;
+            min-width: 70%;
+            max-width: 70%;
+            width: 70%;
         }
         a {
             text-decoration: none;
@@ -83,23 +89,23 @@
             <a href="./contact.html"><h3 class='navItem'>Contact</h3></a>
         </div>
     </div>
-    <div id='homeBody' class='pageBody'>
+    <div id='blogBody' class='pageBody'>
         <div v-for="post in posts">
-            <h2 v-html="post.title"></h2>
-            <p v-html="post.content"></p>
+            <h2 class="blogTitle" v-html="post.title"></h2>
+            <p class="blogText" v-html="post.content"></p>
         </div>
 
-        <h3>Submit your own recipe:</h3>
-        <form action="https://formspree.io/gibsonhdrew@gmail.com" method="POST">
-            <input type="text" name="Your Name">
-            <input type="text" name="Recipe Name">
-            <input type="text" name="Recipe">
+        <h3>Submit your own recipe or thoughts on SPAM:</h3>
+        <form class='submitRecipeForm' action="https://formspree.io/gibsonhdrew@gmail.com" method="POST">
+            <input type="text" name="Your Name" placeholder="Name"><br/>
+            <input type="text" name="Recipe / Story Title" placeholder="Recipe / Story Title"><br/>
+            <input type="text" name="Text" placeholder="Text"><br/>
             <input type="submit" value="Send">
         </form> 
     </div>
     <script>
-        const homeBody = new Vue({
-            el: '#homeBody',
+        const blogBody = new Vue({
+            el: '#blogBody',
             data: {
                 posts: []
             },

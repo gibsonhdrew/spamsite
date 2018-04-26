@@ -5,17 +5,16 @@ WP api usage:
 
 [[./][directory]]
 
-
 * Shared Components
-** indexhead
-   #+BEGIN_SRC html :noweb yes :noweb-ref indexhead
+** htmlhead
+   #+BEGIN_SRC html :noweb yes :noweb-ref htmlhead
    <!DOCTYPE html>
    <html lang='en'>
    <head>
        <meta charset='utf-8'>
        <meta name='viewport' content='width=device-width,initial-scale=1' />
        <title>Specially Processed American Me</title>
-       <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
        <style media='screen' type='text/css'>
            <<cssd>>
        </style>
@@ -45,21 +44,25 @@ WP api usage:
        </div>
    #+END_SRC 
    
-
-
 * [[CSS]]
 ** Desktop
    #+BEGIN_SRC css :noweb-ref cssd
    body {
-       font-family: "Open Sans", sans-serif;
+       font-family: "Crimson Text", serif;
        margin-top: 0;
        margin-left: 0;
        width: 100vw;
    }
+   .submitRecipeForm {
+       display: block;
+   }
+   .blogText {
+       font-size: 17px;
+   }
    .size-full {
-       min-width: 100%;
-       max-width: 100%;
-       width: 100%;
+       min-width: 70%;
+       max-width: 70%;
+       width: 70%;
    }
    a {
        text-decoration: none;
@@ -115,11 +118,10 @@ WP api usage:
    }
    #+END_SRC 
 
-
 * Pages
 ** ./index.html
    components 
-     [[indexhead]]
+     [[htmlhead]]
      [[vueLink]]
      [[nav]]
 
@@ -127,19 +129,19 @@ WP api usage:
      https://vuejs.org/v2/guide/syntax.html#Raw-HTML
 
    #+BEGIN_SRC html :noweb yes :tangle ./index.html
-   <<indexhead>>
+   <<htmlhead>>
    <body>
        <<vueLink>>
        <<nav>>
-       <div id='homeBody' class='pageBody'>
+       <div id='blogBody' class='pageBody'>
            <div v-for="post in posts">
-               <h2 v-html="post.title"></h2>
-               <p v-html="post.content"></p>
+               <h2 class="blogTitle" v-html="post.title"></h2>
+               <p class="blogText" v-html="post.content"></p>
            </div>
        </div>
        <script>
-           const homeBody = new Vue({
-               el: '#homeBody',
+           const blogBody = new Vue({
+               el: '#blogBody',
                data: {
                    posts: []
                },
@@ -163,12 +165,12 @@ WP api usage:
 
 ** ./about.html
    components 
-     [[indexhead]]
+     [[htmlhead]]
      [[vueLink]]
      [[nav]]
 
    #+BEGIN_SRC html :noweb yes :tangle ./about.html
-   <<indexhead>>
+   <<htmlhead>>
    <body>
        <<vueLink>>
        <<nav>>
@@ -182,32 +184,32 @@ WP api usage:
 
 ** ./recipes.html
    components 
-     [[indexhead]]
+     [[htmlhead]]
      [[vueLink]]
      [[nav]]
 
    #+BEGIN_SRC html :noweb yes :tangle ./recipes.html
-   <<indexhead>>
+   <<htmlhead>>
    <body>
        <<vueLink>>
        <<nav>>
-       <div id='homeBody' class='pageBody'>
+       <div id='blogBody' class='pageBody'>
            <div v-for="post in posts">
-               <h2 v-html="post.title"></h2>
-               <p v-html="post.content"></p>
+               <h2 class="blogTitle" v-html="post.title"></h2>
+               <p class="blogText" v-html="post.content"></p>
            </div>
 
-           <h3>Submit your own recipe:</h3>
-           <form action="https://formspree.io/gibsonhdrew@gmail.com" method="POST">
-               <input type="text" name="Your Name">
-               <input type="text" name="Recipe Name">
-               <input type="text" name="Recipe">
+           <h3>Submit your own recipe or thoughts on SPAM:</h3>
+           <form class='submitRecipeForm' action="https://formspree.io/gibsonhdrew@gmail.com" method="POST">
+               <input type="text" name="Your Name" placeholder="Name"><br/>
+               <input type="text" name="Recipe / Story Title" placeholder="Recipe / Story Title"><br/>
+               <input type="text" name="Text" placeholder="Text"><br/>
                <input type="submit" value="Send">
            </form> 
        </div>
        <script>
-           const homeBody = new Vue({
-               el: '#homeBody',
+           const blogBody = new Vue({
+               el: '#blogBody',
                data: {
                    posts: []
                },
@@ -231,12 +233,12 @@ WP api usage:
 
 ** ./contact.html
    components 
-     [[indexhead]]
+     [[htmlhead]]
      [[vueLink]]
      [[nav]]
 
    #+BEGIN_SRC html :noweb yes :tangle ./contact.html
-   <<indexhead>>
+   <<htmlhead>>
    <body>
        <<vueLink>>
        <<nav>>
