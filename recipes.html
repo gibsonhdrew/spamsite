@@ -21,6 +21,26 @@
             justify-content: flex-start;
             flex-wrap: wrap;
         }
+        .pageHeader {
+            text-align: center;
+        }
+        .closeRecipeButton {
+            color: #555555;
+            position: relative;
+            float: right;
+            right: 1%;
+            background-color: #ededed;
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            text-align: center;
+            font-family: sans-serif;
+            border-radius: 50%;
+        }
+        .closeRecipeButton:hover {
+            cursor: pointer;
+            background-color: #ff7f7f;
+        }
         .recipeContainer {
             border: 2px solid orange;
             width: 18%;
@@ -29,19 +49,22 @@
             margin-bottom: 14px;
         }
         .recipeContentDiv {
-            border: 2px solid black;
+            border: 2px solid #232323;
+            border-radius: 5px;
+            background-color: #ffffff;
             position: absolute;
             top: 200px;
             left: 24%;
             width: 46%;
         }
         .recipeTopBar {
-            height: 24px;
+            height: 26px;
             background-color: #555555;
         }
         .recipeContent {
             overflow: scroll;
-            height: 200px;
+            padding: 10px;
+            height: 300px;
             overflow-x: hidden;
         }
         .recipeContainer:hover {
@@ -134,16 +157,18 @@
     </div>
     <div id='blogBody' class='pageBody'>
 
+        <h2 class='pageHeader'>stories and recipes</h2>
+
         <div class="recipesDiv">
-            <div class="recipeContainer" v-for="post in posts" v-on:click="displayRecipeText" v-bind:id="'id'+post.id">
-                <h2 class="recipeTitle" v-html="post.title" v-bind:id="'id'+post.id"></h2>
+            <div class="recipeContainer" v-for="post in posts" v-on:click="displayRecipeText" v-bind:id="post.id">
+                <h2 class="recipeTitle" v-html="post.title" v-bind:id="post.id"></h2>
             </div>
         </div>
 
         <div class="displayRecipes" v-for="post in posts" v-bind:id="'id'+post.id">
             <div class="recipeContentDiv">
                 <div class="recipeTopBar">
-                    <div class="closeRecipeButton"></div>
+                    <div class="closeRecipeButton" v-on:click="closeRecipeText">x</div>
                 </div>
                 <div class="recipeContent" v-html="post.content">
                 </div>
@@ -166,8 +191,20 @@
             },
             methods: {
                 displayRecipeText(event) {
-                    console.log('ok')
-                    console.log(event.target.id)
+                    let closeTheseRecipes = document.getElementsByClassName("displayRecipes")
+                    for (let x of closeTheseRecipes) {
+                        if (closeTheseRecipes.id != 'id'+event.target.id) {
+                            x.style.visibility = "hidden"
+                        }
+                    }
+                    let chosenRecipe = document.getElementById('id'+event.target.id)
+                    chosenRecipe.style.visibility = "visible";
+                },
+                closeRecipeText(event) {
+                   let closeAllRecipes = document.getElementsByClassName("displayRecipes")
+                   for (let x of closeAllRecipes) {
+                       x.style.visibility = "hidden"
+                   }
                 }
             },
             created () {
