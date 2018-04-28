@@ -56,6 +56,9 @@ WP api usage:
        margin-left: 0;
        width: 100vw;
    }
+   .displayRecipes {
+       visibility: hidden;
+   }
    .recipesDiv {
        border: 2px solid cyan;
        display: flex;
@@ -72,12 +75,18 @@ WP api usage:
    .recipeContentDiv {
        border: 2px solid black;
        position: absolute;
-       height: 200px;
-       overflow: scroll;
-       overflow-x: hidden;
        top: 200px;
-       left: 320px;
-       width: 480px;
+       left: 24%;
+       width: 46%;
+   }
+   .recipeTopBar {
+       height: 24px;
+       background-color: #555555;
+   }
+   .recipeContent {
+       overflow: scroll;
+       height: 200px;
+       overflow-x: hidden;
    }
    .recipeContainer:hover {
        cursor: pointer;
@@ -231,11 +240,19 @@ WP api usage:
        <<vueLink>>
        <<nav>>
        <div id='blogBody' class='pageBody'>
+
            <div class="recipesDiv">
-               <div class="recipeContainer" v-for="post in posts" v-on:click="displayRecipeText">
-                   <h2 class="recipeTitle" v-html="post.title"></h2>
-                   <div class="recipeContentDiv" v-html="post.content">
+               <div class="recipeContainer" v-for="post in posts" v-on:click="displayRecipeText" v-bind:id="'id'+post.id">
+                   <h2 class="recipeTitle" v-html="post.title" v-bind:id="'id'+post.id"></h2>
+               </div>
+           </div>
+
+           <div class="displayRecipes" v-for="post in posts" v-bind:id="'id'+post.id">
+               <div class="recipeContentDiv">
+                   <div class="recipeTopBar">
                        <div class="closeRecipeButton"></div>
+                   </div>
+                   <div class="recipeContent" v-html="post.content">
                    </div>
                </div>
            </div>
@@ -255,8 +272,8 @@ WP api usage:
                    posts: []
                },
                methods: {
-                   displayRecipeText() {
-                       console.log('ok')
+                   displayRecipeText(event) {
+                       console.log(event.target.id)
                    }
                },
                created () {
@@ -296,3 +313,4 @@ WP api usage:
    </html>
    #+END_SRC 
 
+   
