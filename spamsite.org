@@ -86,11 +86,20 @@ WP api usage:
        background-color: #ff7f7f;
    }
    .recipeContainer {
+       position: relative;
        border: 2px solid orange;
        width: 18%;
-       height: 15em;
+       max-height: 18em;
        margin-right: 1.5%;
        margin-bottom: 14px;
+       text-align: center;
+   }
+   .recipeSpamPic {
+       max-width: 100%;
+       max-height: 100%;
+       opacity: 0.9;
+       margin: 0 auto;
+       z-index: 499;
    }
    .recipeContentDiv {
        border: 2px solid #555555;
@@ -107,7 +116,7 @@ WP api usage:
    .recipeContent {
        overflow: scroll;
        background-color: #ffffff;
-       opacity: 0.8;
+       opacity: 0.9;
        padding: 16px;
        font-size: 17px;
        height: 300px;
@@ -120,7 +129,19 @@ WP api usage:
        visibility: visible;
    }
    .recipeTitle {
+       display: table;
        visibility: hidden;
+       position: absolute;
+       opacity: 0.99;
+       z-index: 500;
+       width: 70%;
+       max-width: 70%;
+       left: 14%;
+       top: 26%;
+       color: white;
+       max-width: 70%;
+       font-size: 22px;
+       margin: 0 auto;
    }
    
    .submitRecipeForm {
@@ -271,12 +292,13 @@ WP api usage:
            <div class="recipesDiv">
                <div class="recipeContainer" v-for="post in posts" v-on:click="displayRecipeText" v-bind:id="post.id">
                    <h2 class="recipeTitle" v-html="post.title" v-bind:id="post.id"></h2>
+                   <img class="recipeSpamPic" v-bind:src="post.spamPicNumber" v-bind:id="post.id"></img>
                </div>
            </div>
 
            <div class="displayRecipes" v-for="post in posts" v-bind:id="'id'+post.id">
                <div class="recipeContentDiv">
-                   <div class="recipeTopBar">
+                   <div class="recipeTopBar" id="drag_me">
                        <div class="closeRecipeButton" v-on:click="closeRecipeText">x</div>
                    </div>
                    <div class="recipeContent">
@@ -305,7 +327,7 @@ WP api usage:
                        let closeTheseRecipes = document.getElementsByClassName("displayRecipes")
                        for (let x of closeTheseRecipes) {
                            if (closeTheseRecipes.id != 'id'+event.target.id) {
-                               x.style.visibility = "hidden"
+                               x.style.visibility = "hidden";
                            }
                        }
                        let chosenRecipe = document.getElementById('id'+event.target.id)
@@ -314,7 +336,7 @@ WP api usage:
                    closeRecipeText(event) {
                       let closeAllRecipes = document.getElementsByClassName("displayRecipes")
                       for (let x of closeAllRecipes) {
-                          x.style.visibility = "hidden"
+                          x.style.visibility = "hidden";
                       }
                    }
                },
@@ -323,9 +345,18 @@ WP api usage:
                        .then(response => response.json())
                        .then(json => {
                            console.log(json)
+                           let spamPicCounter = 1
                            for (var x of json) {
                                if (x.tags[0] == "2832") {
-                                   this.posts.push({"id": x.id, "title": x.title.rendered, "content": x.content.rendered})
+                                   this.posts.push({
+                                       "id": x.id, 
+                                       "title": x.title.rendered, 
+                                       "content": x.content.rendered,
+                                       "spamPicNumber": "./images/Slice_"+spamPicCounter+".png"
+                                   })
+                                   if (spamPicCounter < 15) {
+                                       spamPicCounter++;
+                                   } else spamPicCounter = 1;
                                }
                            }
                        })
