@@ -11,7 +11,8 @@
             margin-top: 0;
             margin-left: 0;
             width: 100vw;
-            background-color: #ffd1d1;
+            /* background-color: #ffd1d1; */
+            background-color: #ffbc9e; 
         }
         .displayRecipes {
             visibility: hidden;
@@ -47,7 +48,7 @@
         }
         .sendRecipeText {
             width: 400px;
-            padding-bottom: 300px;
+            height: 300px;
         }
         .recipeContainer {
             position: relative;
@@ -209,9 +210,9 @@
 
         <h3>Submit your own recipe or thoughts on SPAM:</h3>
         <form class="submitRecipeForm" action="https://formspree.io/gibsonhdrew@gmail.com" method="POST">
-            <input class="sendRecipeAuthor" type="text" name="Your Name" placeholder="Name"><br/>
+            <textarea class="sendRecipeAuthor" type="text" name="Your Name" placeholder="Name"></textarea><br/>
             <br/>
-            <input class="sendRecipeText" type="text" name="Text" placeholder="Recipe / Story"><br/>
+            <textarea class="sendRecipeText" type="text" name="Text" placeholder="Recipe / Story"></textarea><br/>
             <br/>
             <input type="submit" value="Send">
         </form> 
