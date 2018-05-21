@@ -173,7 +173,7 @@ WP api usage:
        /* border: 2px solid green; */
        padding-top: 10px;
        padding-bottom: 10px;
-       max-height: 120px;
+       max-height: 200px;
        margin: 0 auto;
        text-align: center;
    }
