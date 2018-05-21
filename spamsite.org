@@ -62,6 +62,7 @@ WP api usage:
    }
    .recipesDiv {
        /* border: 2px solid cyan; */
+       margin-top: 25px;
        display: flex;
        justify-content: flex-start;
        flex-wrap: wrap;
