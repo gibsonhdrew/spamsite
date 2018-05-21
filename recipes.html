@@ -42,6 +42,13 @@
             cursor: pointer;
             background-color: #ff7f7f;
         }
+        .sendRecipeAuthor {
+            width: 400px;
+        }
+        .sendRecipeText {
+            width: 400px;
+            padding-bottom: 300px;
+        }
         .recipeContainer {
             position: relative;
             /* border: 2px solid orange; */
@@ -204,9 +211,10 @@
 
         <h3>Submit your own recipe or thoughts on SPAM:</h3>
         <form class="submitRecipeForm" action="https://formspree.io/gibsonhdrew@gmail.com" method="POST">
-            <input type="text" name="Your Name" placeholder="Name"><br/>
-            <input type="text" name="Recipe / Story Title" placeholder="Recipe / Story Title"><br/>
-            <input type="text" name="Text" placeholder="Text"><br/>
+            <input class="sendRecipeAuthor" type="text" name="Your Name" placeholder="Name"><br/>
+            <br/>
+            <input class="sendRecipeText" type="text" name="Text" placeholder="Recipe / Story"><br/>
+            <br/>
             <input type="submit" value="Send">
         </form> 
     </div>
