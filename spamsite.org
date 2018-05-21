@@ -144,10 +144,10 @@ WP api usage:
        width: 70%;
        max-width: 70%;
        left: 14%;
-       top: 26%;
+       top: 29%;
        color: white;
        max-width: 70%;
-       font-size: 22px;
+       font-size: 18px;
        margin: 0 auto;
    }
    
