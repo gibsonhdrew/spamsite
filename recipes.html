@@ -6,7 +6,12 @@
     <title>Specially Processed American Me</title>
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <style media='screen' type='text/css'>
+        html {
+            min-height:100%;
+            position: relative;
+        }
         body {
+            height: 100%;
             font-family: "Crimson Text", serif;
             margin-top: 0;
             margin-left: 0;
@@ -28,21 +33,20 @@
             text-align: center;
         }
         .closeRecipeButton {
-            color: #555555;
+            color: #777777;
             position: relative;
             float: right;
             right: 1%;
-            background-color: #ededed;
-            width: 20px;
-            height: 20px;
+            width: 26px;
+            height: 26px;
+            font-size: 26px;
             margin-top: 2px;
             text-align: center;
             font-family: sans-serif;
-            border-radius: 50%;
         }
         .closeRecipeButton:hover {
             cursor: pointer;
-            background-color: #ff7f7f;
+            color: white;
         }
         .sendRecipeAuthor {
             width: 400px;
@@ -68,18 +72,37 @@
             z-index: 499;
         }
         .recipeContentDiv {
-            border: 2px solid #ededed; 
-            border-radius: 3px;
             position: absolute;
-            top: 200px;
-            left: 33%;
-            width: 33%;
+            width: 100vw;
+            top: 0;
+            bottom: 0;
+            left: 0;
         }
-        .recipeTopBar {
-            height: 26px;
-            background-color: #EDEDED;
+        .boldText {
+            font-weight: bold;
+        }
+        .backgroundFade {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            background-color: #111111;
+            opacity: 0.6;
+            width: 100vw;
+            height: 100vw;
         }
         .recipeContent {
+            position: fixed;
+            width: 36vw;
+            height: 60vw;
+            margin-left: 33vw;
+            margin-right: 33ww;
+            margin-bottom: 20vh;
+            margin-top: 20vh;
+            border: 2px solid #ededed; 
+            border-radius: 5px;
             overflow: scroll;
             background-color: #ffffff;
             opacity: 0.9;
@@ -199,12 +222,12 @@
 
         <div class="displayRecipes" v-for="post in posts" v-bind:id="'id'+post.id">
             <div class="recipeContentDiv">
-                <div class="recipeTopBar" id="drag_me">
+                <div class="backgroundFade" v-on:click="closeRecipeText">
                     <div class="closeRecipeButton" v-on:click="closeRecipeText">x</div>
                 </div>
                 <div class="recipeContent">
                     <p v-html="post.content"></p>
-                    <p v-html="'- '+post.title"></p>
+                    <p v-html="'- '+post.title" class="boldText"></p>
                 </div>
             </div>
         </div>
