@@ -134,7 +134,8 @@ WP api usage:
        display: inline-block;
        border-bottom: 3px solid #222222;
    }
-   .notBoldText {
+   .boldText2 {
+       font-weight: bold;
    }
    .recipeContent {
        border-radius: 4px;
@@ -352,7 +353,7 @@ WP api usage:
                            <div class="closeRecipeButton" v-on:click="closeRecipeText">x</div>
                            <div class="recipeContent">
                                <p v-html="post.content"></p>
-                               <p v-html="'- '+post.title" class="boldText"></p>
+                               <p v-html="'- '+post.title" class="boldText2"></p>
                            </div>
                        </div>
                    </div>
