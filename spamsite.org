@@ -93,6 +93,7 @@ WP api usage:
        text-align: center;
        font-family: sans-serif;
        border-radius: 50%;
+       visibility: hidden;
    }
    .closeRecipeButton:hover {
        cursor: pointer;
@@ -133,8 +134,7 @@ WP api usage:
        font-weight: bold;
    }
    .recipeContent {
-       border: 2px solid #ededed; 
-       border-radius: 3px;
+       border-radius: 4px;
        overflow: scroll;
        background-color: #ffffff;
        opacity: 0.9;
@@ -321,6 +321,7 @@ WP api usage:
 
                    <div class="displayRecipes" v-bind:id="'id'+post.id">
                        <div class="recipeContentDiv">
+                           <div class="closeRecipeButton" v-on:click="closeRecipeText">x</div>
                            <div class="recipeContent">
                                <p v-html="post.content"></p>
                                <p v-html="'- '+post.title" class="boldText"></p>
