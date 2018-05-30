@@ -47,20 +47,24 @@ WP api usage:
    #+END_SRC 
    
 * [[CSS]]
-** Desktop
+** TODO Desktop
    #+BEGIN_SRC css :noweb-ref cssd
-   html {
-       min-height:100%;
-       position: relative;
-   }
    body {
-       height: 100%;
        font-family: "Crimson Text", serif;
        margin-top: 0;
        margin-left: 0;
        width: 100vw;
        /* background-color: #ffd1d1; */
        background-color: #ffbc9e; 
+   }
+   .transparentBG {
+       position: fixed;
+       top: 0;
+       left: 0;
+       height: 100vw;
+       opacity: 0.5;
+       width: 100vw;
+       visibility: hidden;
    }
    .displayRecipes {
        visibility: hidden;
@@ -76,20 +80,23 @@ WP api usage:
        text-align: center;
    }
    .closeRecipeButton {
-       color: #777777;
+       color: #555555;
        position: relative;
-       float: right;
-       right: 1%;
-       width: 26px;
-       height: 26px;
-       font-size: 26px;
+       background-color: #ededed;
+       width: 20px;
+       height: 20px;
        margin-top: 2px;
+       opacity: 1;
+       margin-bottom: -26px;
+       margin-left: 266px;
+       z-index: 900;
        text-align: center;
        font-family: sans-serif;
+       border-radius: 50%;
    }
    .closeRecipeButton:hover {
        cursor: pointer;
-       color: white;
+       background-color: #ff7f7f;
    }
    .sendRecipeAuthor {
        width: 400px;
@@ -115,43 +122,28 @@ WP api usage:
        z-index: 499;
    }
    .recipeContentDiv {
-       position: absolute;
-       width: 100vw;
-       top: 0;
-       bottom: 0;
-       left: 0;
+       position: relative;
+       width: 300px;
+       margin-top: -304px;
+       margin-left: -65px;
+       opacity: 0.99;
+       z-index: 600;
    }
    .boldText {
        font-weight: bold;
    }
-   .backgroundFade {
-       position: fixed;
-       top: 0;
-       left: 0;
-       right: 0;
-       bottom: 0;
-       overflow: hidden;
-       background-color: #111111;
-       opacity: 0.6;
-       width: 100vw;
-       height: 100vw;
-   }
    .recipeContent {
-       position: fixed;
-       width: 36vw;
-       height: 60vw;
-       margin-left: 33vw;
-       margin-right: 33ww;
-       margin-bottom: 20vh;
-       margin-top: 20vh;
        border: 2px solid #ededed; 
-       border-radius: 5px;
+       border-radius: 3px;
        overflow: scroll;
        background-color: #ffffff;
        opacity: 0.9;
-       padding: 16px;
-       font-size: 17px;
+       text-align: left;
        height: 300px;
+       padding-left: 16px;
+       padding-right: 16px;
+       padding-bottom: 16px;
+       font-size: 15px;
        overflow-x: hidden;
    }
    .recipeContainer:hover {
@@ -319,21 +311,21 @@ WP api usage:
        <<nav>>
        <div id='blogBody' class='pageBody'>
 
+           <div class="transparentBG" v-on:click="closeRecipeText"></div>
+
            <div class="recipesDiv">
                <div class="recipeContainer" v-for="post in posts" v-on:click="displayRecipeText" v-bind:id="post.id">
+
                    <h2 class="recipeTitle" v-html="post.title" v-bind:id="post.id"></h2>
                    <img class="recipeSpamPic" v-bind:src="post.spamPicNumber" v-bind:id="post.id"></img>
-               </div>
-           </div>
 
-           <div class="displayRecipes" v-for="post in posts" v-bind:id="'id'+post.id">
-               <div class="recipeContentDiv">
-                   <div class="backgroundFade" v-on:click="closeRecipeText">
-                       <div class="closeRecipeButton" v-on:click="closeRecipeText">x</div>
-                   </div>
-                   <div class="recipeContent">
-                       <p v-html="post.content"></p>
-                       <p v-html="'- '+post.title" class="boldText"></p>
+                   <div class="displayRecipes" v-bind:id="'id'+post.id">
+                       <div class="recipeContentDiv">
+                           <div class="recipeContent">
+                               <p v-html="post.content"></p>
+                               <p v-html="'- '+post.title" class="boldText"></p>
+                           </div>
+                       </div>
                    </div>
                </div>
            </div>
@@ -355,20 +347,24 @@ WP api usage:
                },
                methods: {
                    displayRecipeText(event) {
-                       let closeTheseRecipes = document.getElementsByClassName("displayRecipes")
-                       for (let x of closeTheseRecipes) {
-                           if (closeTheseRecipes.id != 'id'+event.target.id) {
-                               x.style.visibility = "hidden";
-                           }
-                       }
-                       let chosenRecipe = document.getElementById('id'+event.target.id)
-                       chosenRecipe.style.visibility = "visible";
+                      let closeTheseRecipes = document.getElementsByClassName("displayRecipes")
+                      for (let x of closeTheseRecipes) {
+                          if (closeTheseRecipes.id != 'id'+event.target.id) {
+                              x.style.visibility = "hidden";
+                          }
+                      }
+                      let chosenRecipe = document.getElementById('id'+event.target.id)
+                      chosenRecipe.style.visibility = "visible";
+                      let theTransparentBG = document.getElementsByClassName("transparentBG")
+                      theTransparentBG[0].style.visibility = "visible";
                    },
                    closeRecipeText(event) {
                       let closeAllRecipes = document.getElementsByClassName("displayRecipes")
                       for (let x of closeAllRecipes) {
                           x.style.visibility = "hidden";
                       }
+                      let theTransparentBG = document.getElementsByClassName("transparentBG")
+                      theTransparentBG[0].style.visibility = "hidden";
                    }
                },
                created () {
