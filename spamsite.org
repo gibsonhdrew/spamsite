@@ -131,10 +131,10 @@ WP api usage:
        z-index: 600;
    }
    .boldText {
-       font-weight: bold;
+       display: inline-block;
+       border-bottom: 3px solid #222222;
    }
    .notBoldText {
-       font-weight: 300;
    }
    .recipeContent {
        border-radius: 4px;
@@ -208,11 +208,16 @@ WP api usage:
    }
    .navItem {
        display: inline-block;
-       width: 220px;
+       width: auto;
        /* border: 2px solid violet; */
        padding-top: 6px;
        padding-bottom: 6px;
-       margin: 0;
+       margin-left: 55px;
+       margin-right: 55px;
+       height: 20px;
+   }
+   .navItem:hover {
+       color: #666;
    }
    .pageBody {
        /* border: 2px solid red; */
