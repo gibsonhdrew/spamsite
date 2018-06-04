@@ -58,8 +58,12 @@
         }
         .sendRecipeAuthor {
             width: 400px;
+            border-radius: 4px;
+            border: 1px solid white;
         }
         .sendRecipeText {
+            border-radius: 4px;
+            border: 1px solid white;
             width: 400px;
             height: 300px;
         }
@@ -194,8 +198,91 @@
     </style>
     <style media='screen' type='text/css'>
         @media screen and (max-device-width: 800px) {
-        
-        }
+           .pageBody {
+               /* border: 2px solid red; */
+               margin-left: 3vw;
+               margin-right: 3vw;
+           }
+           .pageTitle {
+               /* border: 2px solid green; */
+               padding-top: 10px;
+               padding-bottom: 10px;
+               margin-left: 8vw;
+               margin-right: 8vw;
+               max-height: 130px;
+               margin: 0 auto;
+               text-align: center;
+               margin-bottom: -27px;
+           }
+           nav {
+               border: 2px solid blue;
+               text-align: center;
+           }
+           .navItems {
+               display: inline-block;
+               /* border: 2px solid cyan; */
+               text-align: center;
+               margin-left: auto;
+               margin-right: auto;
+           }
+           .navItem {
+               display: inline-block;
+               width: auto;
+               /* border: 2px solid violet; */
+               padding-top: 0px;
+               padding-bottom: 0px;
+               font-size: 24px;
+               margin-left: 10px;
+               margin-right: 10px;
+               height: auto;
+           }
+           .sendRecipeAuthor {
+               width: 93vw;
+               max-width: 93vw;
+           }
+           .sendRecipeText {
+               width: 93vw;
+               height: 250px;
+           }
+           .recipeTitle {
+               display: table;
+               visibility: visible;
+               position: absolute;
+               opacity: 0.99;
+               z-index: 500;
+               width: 70%;
+               max-width: 70%;
+               left: 14%;
+               top: 29%;
+               color: white;
+               max-width: 70%;
+               font-size: 14px;
+               margin: 0 auto;
+           }
+           .recipeContentDiv {
+               position: fixed;
+               left: 5vw;
+               top: 40vw;
+               width: 90vw;
+               margin-top: 0px;
+               margin-left: 0px;
+               opacity: 0.99;
+               z-index: 600;
+           }
+           .recipeContent {
+               border-radius: 4px;
+               border: 3px solid #EDEDED;
+               overflow: scroll;
+               background-color: #ffffff;
+               opacity: 0.98;
+               text-align: left;
+               height: 300px;
+               padding-left: 16px;
+               padding-right: 16px;
+               padding-bottom: 0px;
+               font-size: 15px;
+               overflow-x: hidden;
+           }
     </style>
 </head>
 <body>
