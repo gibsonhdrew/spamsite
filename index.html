@@ -6,199 +6,209 @@
     <title>Specially Processed American Me</title>
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <style media='screen' type='text/css'>
-        body {
-            font-family: "Crimson Text", serif;
-            margin-top: 0;
-            margin-left: 0;
-            width: 100vw;
-            /* background-color: #ffd1d1; */
-            background-color: #ffbc9e; 
-        }
-        .transparentBG {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vw;
-            opacity: 0.5;
-            width: 100vw;
-            visibility: hidden;
-        }
-        .displayRecipes {
-            visibility: hidden;
-        }
-        .recipesDiv {
-            /* border: 2px solid cyan; */
-            margin-top: 25px;
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-        }
-        .pageHeader {
-            text-align: center;
-        }
-        .closeRecipeButton {
-            color: #555555;
-            position: relative;
-            background-color: #ededed;
-            width: 20px;
-            height: 20px;
-            margin-top: 2px;
-            opacity: 1;
-            margin-bottom: -26px;
-            margin-left: 266px;
-            z-index: 900;
-            text-align: center;
-            font-family: sans-serif;
-            border-radius: 50%;
-            visibility: hidden;
-        }
-        .closeRecipeButton:hover {
-            cursor: pointer;
-            background-color: #ff7f7f;
-        }
-        .sendRecipeAuthor {
-            width: 400px;
-            border-radius: 4px;
-            border: 1px solid white;
-        }
-        .sendRecipeText {
-            border-radius: 4px;
-            border: 1px solid white;
-            width: 400px;
-            height: 300px;
-        }
-        .recipeContainer {
-            position: relative;
-            /* border: 2px solid orange; */
-            width: 18%;
-            max-height: 18em;
-            margin-right: 1.5%;
-            margin-bottom: 14px;
-            text-align: center;
-        }
-        .recipeSpamPic {
-            max-width: 100%;
-            max-height: 100%;
-            opacity: 0.9;
-            margin: 0 auto;
-            z-index: 499;
-        }
-        .recipeContentDiv {
-            position: relative;
-            width: 300px;
-            margin-top: -304px;
-            margin-left: -65px;
-            opacity: 0.99;
-            z-index: 600;
-        }
-        .boldText {
-            display: inline-block;
-            border-bottom: 2px solid #222222;
-        }
-        .boldText2 {
-            font-weight: bold;
-        }
-        .recipeContent {
-            border-radius: 4px;
-            overflow: scroll;
-            background-color: #ffffff;
-            opacity: 0.9;
-            text-align: left;
-            height: 300px;
-            padding-left: 16px;
-            padding-right: 16px;
-            padding-bottom: 16px;
-            font-size: 15px;
-            overflow-x: hidden;
-        }
-        .recipeContainer:hover {
-            cursor: pointer;
-        }
-        .recipeContainer:hover > .recipeTitle {
-            visibility: visible;
-        }
-        .recipeTitle {
-            display: table;
-            visibility: hidden;
-            position: absolute;
-            opacity: 0.99;
-            z-index: 500;
-            width: 70%;
-            max-width: 70%;
-            left: 14%;
-            top: 29%;
-            color: white;
-            max-width: 70%;
-            font-size: 18px;
-            margin: 0 auto;
-        }
+         body {
+             font-family: "Crimson Text", serif;
+             margin-top: 0;
+             margin-left: 0;
+             width: 100vw;
+             /* background-color: #ffd1d1; */
+             background-color: #ffbc9e; 
+         }
+         .transparentBG {
+             position: fixed;
+             top: 0;
+             left: 0;
+             height: 100vw;
+             opacity: 0.5;
+             width: 100vw;
+             visibility: hidden;
+         }
+         .displayRecipes {
+             visibility: hidden;
+         }
+         .recipesDiv {
+             /* border: 2px solid cyan; */
+             margin-top: 25px;
+             display: flex;
+             justify-content: flex-start;
+             flex-wrap: wrap;
+         }
+         .pageHeader {
+             text-align: center;
+         }
+         .closeRecipeButton {
+             color: #555555;
+             position: relative;
+             background-color: #ededed;
+             width: 20px;
+             height: 20px;
+             margin-top: 2px;
+             opacity: 1;
+             margin-bottom: -26px;
+             margin-left: 266px;
+             z-index: 900;
+             text-align: center;
+             font-family: sans-serif;
+             border-radius: 50%;
+             visibility: hidden;
+         }
+         .closeRecipeButton:hover {
+             cursor: pointer;
+             background-color: #ff7f7f;
+         }
+         .sendRecipeAuthor {
+             width: 400px;
+             border-radius: 4px;
+             border: 1px solid white;
+         }
+         .sendRecipeText {
+             border-radius: 4px;
+             border: 1px solid white;
+             width: 400px;
+             height: 300px;
+         }
+         .recipeContainer {
+             position: relative;
+             /* border: 2px solid orange; */
+             width: 18%;
+             max-height: 18em;
+             margin-right: 1.5%;
+             margin-bottom: 14px;
+             text-align: center;
+         }
+         .recipeSpamPic {
+             max-width: 100%;
+             max-height: 100%;
+             opacity: 0.9;
+             margin: 0 auto;
+             z-index: 499;
+         }
+         .recipeContentDiv {
+             position: relative;
+             width: 300px;
+             margin-top: -304px;
+             margin-left: -65px;
+             opacity: 0.99;
+             z-index: 600;
+         }
+         .boldText {
+             display: inline-block;
+             border-bottom: 2px solid #222222;
+         }
+         .boldText2 {
+             font-weight: bold;
+         }
+         .recipeContent {
+             border-radius: 4px;
+             overflow: scroll;
+             background-color: #ffffff;
+             opacity: 0.9;
+             text-align: left;
+             height: 300px;
+             padding-left: 16px;
+             padding-right: 16px;
+             padding-bottom: 16px;
+             font-size: 15px;
+             overflow-x: hidden;
+         }
+         .recipeContainer:hover {
+             cursor: pointer;
+         }
+         .recipeContainer:hover > .recipeTitle {
+             visibility: visible;
+         }
+         .recipeTitle {
+             display: table;
+             visibility: hidden;
+             position: absolute;
+             opacity: 0.99;
+             z-index: 500;
+             width: 70%;
+             max-width: 70%;
+             left: 14%;
+             top: 29%;
+             color: white;
+             max-width: 70%;
+             font-size: 18px;
+             margin: 0 auto;
+         }
         
-        .submitRecipeForm {
-            display: block;
-        }
-        .blogText {
-            font-size: 17px;
-        }
-        .size-full {
-            min-width: 70%;
-            max-width: 70%;
-            width: 70%;
-            opacity: 0.94;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .pageTitle {
-            /* border: 2px solid green; */
-            padding-top: 10px;
-            padding-bottom: 10px;
-            max-height: 200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .nav {
-            /* border: 2px solid blue; */
-            text-align: center;
-        }
-        .navItems {
-            display: inline-block;
-            /* border: 2px solid cyan; */
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .navItem {
-            display: inline-block;
-            width: auto;
-            /* border: 2px solid violet; */
-            padding-top: 6px;
-            padding-bottom: 6px;
-            margin-left: 55px;
-            margin-right: 55px;
-            height: 20px;
-        }
-        .navItem:hover {
-            color: #666;
-        }
-        .pageBody {
-            /* border: 2px solid red; */
-            margin-left: 13vw;
-            margin-right: 13vw;
-            -webkit-animation: fadein 0.6s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 0.6s; /* Firefox < 16 */
-             -ms-animation: fadein 0.6s; /* Internet Explorer */
-              -o-animation: fadein 0.6s; /* Opera < 12.1 */
-                 animation: fadein 0.6s;
-        }
-        @keyframes fadein {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
+         .submitRecipeForm {
+             display: block;
+         }
+         .blogText {
+             font-size: 17px;
+         }
+         .size-full {
+             min-width: 70%;
+             max-width: 70%;
+             width: 70%;
+             opacity: 0.94;
+         }
+         a {
+             text-decoration: none;
+             color: inherit;
+         }
+         .pageTitle {
+             /* border: 2px solid green; */
+             padding-top: 10px;
+             padding-bottom: 10px;
+             max-height: 200px;
+             margin: 0 auto;
+             text-align: center;
+         }
+         .nav {
+             /* border: 2px solid blue; */
+             text-align: center;
+         }
+         .navItems {
+             display: inline-block;
+             /* border: 2px solid cyan; */
+             text-align: center;
+             margin-left: auto;
+             margin-right: auto;
+         }
+         .navItem {
+             display: inline-block;
+             width: auto;
+             /* border: 2px solid violet; */
+             padding-top: 6px;
+             padding-bottom: 6px;
+             margin-left: 55px;
+             margin-right: 55px;
+             height: 20px;
+         }
+         .navItem:hover {
+             color: #666;
+         }
+         .pageBody {
+             /* border: 2px solid red; */
+             margin-left: 13vw;
+             margin-right: 13vw;
+             -webkit-animation: fadein 0.6s; /* Safari, Chrome and Opera > 12.1 */
+             -moz-animation: fadein 0.6s; /* Firefox < 16 */
+              -ms-animation: fadein 0.6s; /* Internet Explorer */
+               -o-animation: fadein 0.6s; /* Opera < 12.1 */
+                  animation: fadein 0.6s;
+         }
+        .blogPostBody {
+             /* border: 2px solid red; */
+             margin-left: 21vw;
+             margin-right: 21vw;
+             -webkit-animation: fadein 0.6s; /* Safari, Chrome and Opera > 12.1 */
+             -moz-animation: fadein 0.6s; /* Firefox < 16 */
+              -ms-animation: fadein 0.6s; /* Internet Explorer */
+               -o-animation: fadein 0.6s; /* Opera < 12.1 */
+                  animation: fadein 0.6s;
+         }
+         @keyframes fadein {
+             from { opacity: 0; }
+             to   { opacity: 1; }
+         }
     </style>
     <style media='screen' type='text/css'>
         @media screen and (max-device-width: 800px) {
-           .pageBody {
+           .pageBody, .blogPostBody {
                /* border: 2px solid red; */
                margin-left: 3vw;
                margin-right: 3vw;
@@ -300,7 +310,7 @@
             <a href="./contact.html"><h3 class='navItem notBoldText'>contact</h3></a>
         </div>
     </div>
-    <div id='blogBody' class='pageBody'>
+    <div id='blogBody' class='blogPostBody'>
         <div v-for="post in posts">
             <h2 class="blogTitle" v-html="post.title"></h2>
             <p class="blogText" v-html="post.content"></p>
