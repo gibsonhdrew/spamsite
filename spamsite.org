@@ -497,7 +497,7 @@ WP api usage:
                <input class="sendRecipeSendButton" type="submit" value="Send">
                <p>Your story will be published after it is approved. In the meantime, check out other stories hot off the skillet.</p>
            </form> 
-       </div>
+           </div>
        <script>
            const blogBody = new Vue({
                el: '#blogBody',
@@ -573,6 +573,12 @@ WP api usage:
        </div>
        <div class='blogPostBody'>
            <p>This is the contact page.</p>
+           <p>
+               For performance and workshop booking inquiries, contact Producer Chris Ignacio at chris.r.ignacio(at)gmail(dot)com. 
+           </p>
+           <p>
+               For general questions about the project, you can reach Jaime Sunwoo at jaimesunwoo(at)gmail(dot)com.
+           </p>
        </div>
    </body>
    </html>
