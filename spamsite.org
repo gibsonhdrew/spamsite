@@ -240,8 +240,7 @@ WP api usage:
        /* border: 2px solid red; */
        margin-left: 19vw;
        margin-right: 19vw;
-       background-color: #FFFFFF;
-       opacity: 0.8;
+       background-color: rgba(255, 255, 255, 0.6);
        padding-left: 2vw;
        padding-right: 2vw;
        padding-top: 0.6vw;
