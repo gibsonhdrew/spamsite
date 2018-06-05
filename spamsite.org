@@ -572,7 +572,6 @@ WP api usage:
            </div>
        </div>
        <div class='blogPostBody'>
-           <p>This is the contact page.</p>
            <p>
                For performance and workshop booking inquiries, contact Producer Chris Ignacio at chris.r.ignacio(at)gmail(dot)com. 
            </p>
