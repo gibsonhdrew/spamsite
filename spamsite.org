@@ -45,6 +45,9 @@ WP api usage:
        /* background-color: #ffd1d1; */
        background-color: #ffbc9e; 
    }
+   a {
+       font-weight: bold;
+   }
    .transparentBG {
        position: fixed;
        top: 0;
@@ -66,6 +69,17 @@ WP api usage:
    }
    .pageHeader {
        text-align: center;
+   }
+   .bioDiv {
+       display: inline;
+   }
+   .bioPic {
+       height: 110px;
+       float: left;
+       clear: left;
+       border: 2px solid #232323;
+       margin-right: 12px;
+       margin-top: 5px;
    }
    .closeRecipeButton {
        color: #555555;
@@ -418,31 +432,40 @@ WP api usage:
            </p>
 
            <h3>Collaborators</h3>
-           <p>
-               <b>Jaime Sunwoo (Artist, Performer)</b> is a Korean-American multidisciplinary artist from Brooklyn, New York. She combines 
-               video, audio, sculpture, and storytelling to create sensory performances in galleries, theaters, and public spaces. 
-               Her works are part playful, part tragic, and often examine food as a way to discuss identity, history, and death. 
-               She studied art at Yale University, where she wrote and directed Household. Her site-specific projects include 
-               <i>The Creature</i> for the DUMBO Arts Festival, and interactive bar installation <i>Earshot</i>. She has collaborated 
-               with Whoop Dee Doo, and appeared on PBS's Art21. Her upcoming public works will be featured in STooPS Art Crawl 
-               and Art in Odd Places 2018. She is currently a fellow at the Laundromat Project for socially engaged art.
-           </p>
-           <p>
-               <b>Matt Chilton (Sound Designer, Composer)</b> is a New York native and Brooklyn-based musician and producer focused on 
-               building immersive soundscapes from improvisations and unconventional sources. He previously worked with Jaime 
-               Sunwoo on her domestic drama <i>Household</i> at Yale University and most recently with playwright and songwriter Aya Aziz 
-               on her one-woman show Eh Dah: Questions for my Father at New York Music Festival, New York International 
-               Fringe Festival, and Planet Connections Theater Festivity. He studied composition, recording, and sound design 
-               with Paula Matthusen at Wesleyan University.
-           </p>
-           <p>
-               <b>Chris Ignacio (Producer)</b> is an NY based theatre artist, musician, puppeteer, and educator. He has toured nationally 
-               and abroad since earning his BFA from The Boston Conservatory at Berklee. He is a current Culture Push Fellow, 
-               and Queens Council on the Arts: Community Engagement Commissioning grant recipient for his project, <i>Co-written</i>, 
-               which involves songwriting with young people of color. His is dedicated to working with marginalized communities 
-               toward an empowering self-actualization through theater and music. He recently served as Associate Producer 
-               for the Obie Award winning Ma-Yi Theater Company.
-           </p>
+           <div class="bioDiv">
+              <img class="bioPic" src="./images/biopics/jaime_sunwoo.jpg" />
+              <p>
+                  <b>Jaime Sunwoo (Artist, Performer)</b> is a Korean-American multidisciplinary artist from Brooklyn, New York. She combines 
+                  video, audio, sculpture, and storytelling to create sensory performances in galleries, theaters, and public spaces. 
+                  Her works are part playful, part tragic, and often examine food as a way to discuss identity, history, and death. 
+                  She studied art at Yale University, where she wrote and directed Household. Her site-specific projects include 
+                  <i>The Creature</i> for the DUMBO Arts Festival, and interactive bar installation <i>Earshot</i>. She has collaborated 
+                  with Whoop Dee Doo, and appeared on PBS's Art21. Her upcoming public works will be featured in STooPS Art Crawl 
+                  and Art in Odd Places 2018. She is currently a fellow at the Laundromat Project for socially engaged art.
+              </p>
+           </div>
+           <div class="bioDiv">
+              <img class="bioPic" src="./images/biopics/matt_chilton.jpg" />
+              <p>
+                  <b>Matt Chilton (Sound Designer, Composer)</b> is a New York native and Brooklyn-based musician and producer focused on 
+                  building immersive soundscapes from improvisations and unconventional sources. He previously worked with Jaime 
+                  Sunwoo on her domestic drama <i>Household</i> at Yale University and most recently with playwright and songwriter Aya Aziz 
+                  on her one-woman show Eh Dah: Questions for my Father at New York Music Festival, New York International 
+                  Fringe Festival, and Planet Connections Theater Festivity. He studied composition, recording, and sound design 
+                  with Paula Matthusen at Wesleyan University.
+              </p>
+           </div>
+           <div class="bioDiv">
+              <img class="bioPic" src="./images/biopics/chris_ignacio.jpg" />
+              <p>
+                  <b>Chris Ignacio (Producer)</b> is an NY based theatre artist, musician, puppeteer, and educator. He has toured nationally 
+                  and abroad since earning his BFA from The Boston Conservatory at Berklee. He is a current Culture Push Fellow, 
+                  and Queens Council on the Arts: Community Engagement Commissioning grant recipient for his project, <i>Co-written</i>, 
+                  which involves songwriting with young people of color. His is dedicated to working with marginalized communities 
+                  toward an empowering self-actualization through theater and music. He recently served as Associate Producer 
+                  for the Obie Award winning Ma-Yi Theater Company.
+              </p>
+           </div>
        </div>
    </body>
    </html>
