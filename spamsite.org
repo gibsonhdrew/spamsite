@@ -450,7 +450,7 @@ WP api usage:
                   <b>Matt Chilton (Sound Designer, Composer)</b> is a New York native and Brooklyn-based musician and producer focused on 
                   building immersive soundscapes from improvisations and unconventional sources. He previously worked with Jaime 
                   Sunwoo on her domestic drama <i>Household</i> at Yale University and most recently with playwright and songwriter Aya Aziz 
-                  on her one-woman show Eh Dah: Questions for my Father at New York Music Festival, New York International 
+                  on her one-woman show <i>Eh Dah: Questions for my Father</i> at New York Music Festival, New York International 
                   Fringe Festival, and Planet Connections Theater Festivity. He studied composition, recording, and sound design 
                   with Paula Matthusen at Wesleyan University.
               </p>
