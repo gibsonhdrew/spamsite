@@ -34,6 +34,17 @@ WP api usage:
     <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
    #+END_SRC 
 
+** bottomNav
+   #+BEGIN_SRC html :noweb yes :noweb-ref bottomNav
+   <div class="blogPostBody nav">
+       <div class="navItems">
+           <a href="https://google.com" class="navItem notBoldText">Newsletter</a>
+           <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">Facebook</a>
+           <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">Instagram</a>
+       </div>
+   </div>
+   #+END_SRC 
+
 * [[CSS]]
 ** Desktop
    #+BEGIN_SRC css :noweb-ref cssd
@@ -47,6 +58,7 @@ WP api usage:
    }
    a {
        font-weight: bold;
+       text-decoration: underline;
    }
    .transparentBG {
        position: fixed;
@@ -377,6 +389,8 @@ WP api usage:
                <p class="blogText" v-html="post.content"></p>
            </div>
        </div>
+       <br/>
+       <<bottomNav>>
        <script>
            const blogBody = new Vue({
                el: '#blogBody',
@@ -402,11 +416,6 @@ WP api usage:
    #+END_SRC 
 
 ** ./about.html
-   components 
-     [[htmlhead]]
-     [[vueLink]]
-     [[nav]]
-
    #+BEGIN_SRC html :noweb yes :tangle ./about.html
    <<htmlhead>>
    <body>
@@ -484,18 +493,14 @@ WP api usage:
               </p>
               <br/>
            </div>
-    </div>
        </div>
+       <br/>
+       <<bottomNav>>
    </body>
    </html>
    #+END_SRC 
 
 ** ./recipes.html
-   components 
-     [[htmlhead]]
-     [[vueLink]]
-     [[nav]]
-
    #+BEGIN_SRC html :noweb yes :tangle ./recipes.html
    <<htmlhead>>
    <body>
@@ -539,7 +544,9 @@ WP api usage:
                <input class="sendRecipeSendButton" type="submit" value="Send">
                <p>Your story will be published after it is approved. In the meantime, check out other stories hot off the skillet.</p>
            </form> 
-           </div>
+       </div>
+       <br/>
+       <<bottomNav>>
        <script>
            const blogBody = new Vue({
                el: '#blogBody',
@@ -596,11 +603,6 @@ WP api usage:
    #+END_SRC 
 
 ** ./contact.html
-   components 
-     [[htmlhead]]
-     [[vueLink]]
-     [[nav]]
-
    #+BEGIN_SRC html :noweb yes :tangle ./contact.html
    <<htmlhead>>
    <body>
@@ -621,10 +623,36 @@ WP api usage:
                For general questions about the project, you can reach Jaime Sunwoo at jaimesunwoo(at)gmail(dot)com.
            </p>
        </div>
+       <br/>
+       <<bottomNav>>
    </body>
    </html>
    #+END_SRC 
 
+** ./subscription.html
+   #+BEGIN_SRC html :noweb yes :tangle ./subscription.html
+   <<htmlhead>>
+   <body>
+       <<vueLink>>
+       <div class='nav'>
+           <a href="./index.html"><img class='pageTitle' src="./images/spam_title.png"></img></a><br/>
+           <div class='navItems'>
+               <a href="./about.html"><h3 class='navItem notBoldText'>about</h3></a>
+               <a href="./recipes.html"><h3 class='navItem notBoldText'>submit a story</h3></a>
+               <a href="./contact.html"><h3 class='navItem boldText'>contact</h3></a>
+           </div>
+       </div>
+       <div class='blogPostBody'>
+           <h3>Thank you!</h3>
+           <p>Your form has been submitted.</p>
+       </div>
+       <br/>
+       <<bottomNav>>
+   </body>
+   </html>
+   #+END_SRC 
+
+   
    
    
    
