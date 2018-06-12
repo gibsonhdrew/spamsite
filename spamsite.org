@@ -34,13 +34,13 @@ WP api usage:
     <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
    #+END_SRC 
 
-** bottomNav
+** TODO bottomNav
    #+BEGIN_SRC html :noweb yes :noweb-ref bottomNav
    <div class="blogPostBody nav">
        <div class="navItems">
-           <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">Newsletter</a>
-           <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">Facebook</a>
-           <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">Instagram</a>
+           <a href="http://eepurl.com/dxRak9" class="bottomNavItem notBoldText">Newsletter</a>
+           <a href="https://www.facebook.com/SpeciallyProcessed/" class="bottomNavItem notBoldText">Facebook</a>
+           <a href="https://www.instagram.com/speciallyprocessed/" class="bottomNavItem notBoldText">Instagram</a>
        </div>
    </div>
    #+END_SRC 
@@ -59,6 +59,7 @@ WP api usage:
    a {
        font-weight: bold;
        text-decoration: underline;
+       color: inherit;
    }
    .transparentBG {
        position: fixed;
@@ -202,10 +203,6 @@ WP api usage:
        width: 70%;
        opacity: 0.94;
    }
-   a {
-       text-decoration: none;
-       color: inherit;
-   }
    .pageTitle {
        /* border: 2px solid green; */
        padding-top: 10px;
@@ -233,6 +230,17 @@ WP api usage:
        padding-bottom: 6px;
        margin-left: 55px;
        margin-right: 55px;
+       height: 20px;
+   }
+   .bottomNavItem {
+       display: inline-block;
+       width: auto;
+       /* border: 2px solid violet; */
+       padding-top: 6px;
+       padding-bottom: 6px;
+       margin-left: 55px;
+       margin-right: 55px;
+       text-decoration: none;
        height: 20px;
    }
    .navItem:hover {
@@ -288,6 +296,18 @@ WP api usage:
           margin: 0 auto;
           text-align: center;
           margin-bottom: -27px;
+      }
+      .bottomNavItem {
+          text-decoration: none;
+          display: inline-block;
+          width: auto;
+          /* border: 2px solid violet; */
+          padding-top: 0px;
+          padding-bottom: 0px;
+          font-size: 18px;
+          margin-left: 10px;
+          margin-right: 10px;
+          height: auto;
       }
       nav {
           border: 2px solid blue;
