@@ -399,6 +399,7 @@ WP api usage:
            <a href="./index.html"><img class='pageTitle' src="./images/spam_title.png"></img></a><br/>
            <div class='navItems'>
                <a href="./about.html"><h3 class='navItem notBoldText'>about</h3></a>
+               <a href="https://speciallyprocessedamericanme.brownpapertickets.com/"><h3 class='navItem notBoldText'>tickets</h3></a>
                <a href="./recipes.html"><h3 class='navItem notBoldText'>submit a story</h3></a>
                <a href="./contact.html"><h3 class='navItem notBoldText'>contact</h3></a>
            </div>
@@ -444,6 +445,7 @@ WP api usage:
            <a href="./index.html"><img class='pageTitle' src="./images/spam_title.png"></img></a><br/>
            <div class='navItems'>
                <a href="./about.html"><h3 class='navItem boldText'>about</h3></a>
+               <a href="https://speciallyprocessedamericanme.brownpapertickets.com/"><h3 class='navItem notBoldText'>tickets</h3></a>
                <a href="./recipes.html"><h3 class='navItem notBoldText'>submit a story</h3></a>
                <a href="./contact.html"><h3 class='navItem notBoldText'>contact</h3></a>
            </div>
@@ -529,6 +531,7 @@ WP api usage:
            <a href="./index.html"><img class='pageTitle' src="./images/spam_title.png"></img></a><br/>
            <div class='navItems'>
                <a href="./about.html"><h3 class='navItem notBoldText'>about</h3></a>
+               <a href="https://speciallyprocessedamericanme.brownpapertickets.com/"><h3 class='navItem notBoldText'>tickets</h3></a>
                <a href="./recipes.html"><h3 class='navItem boldText'>submit a story</h3></a>
                <a href="./contact.html"><h3 class='navItem notBoldText'>contact</h3></a>
            </div>
@@ -631,6 +634,7 @@ WP api usage:
            <a href="./index.html"><img class='pageTitle' src="./images/spam_title.png"></img></a><br/>
            <div class='navItems'>
                <a href="./about.html"><h3 class='navItem notBoldText'>about</h3></a>
+               <a href="https://speciallyprocessedamericanme.brownpapertickets.com/"><h3 class='navItem notBoldText'>tickets</h3></a>
                <a href="./recipes.html"><h3 class='navItem notBoldText'>submit a story</h3></a>
                <a href="./contact.html"><h3 class='navItem boldText'>contact</h3></a>
            </div>
