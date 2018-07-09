@@ -511,7 +511,7 @@ WP api usage:
               <p>
                  <b>Hao Bai (Lighting Designer)</b> works as a designer & technician in lights, sound, & video, and occasionally photographer. 
                  Selected recent design credits: Lighting Design: <i>Shasta Geaux Pop</i> (CAC, Cincinnati); Run! <i>It’s Getting Ugly</i> (by Susana Cook 
-                 @ JACK); <i>YNCAST</i> (by Stacey Robinson @ JACK); 2017 & 2018 </i>La Mama Moves!</i>; Kate Bornstein; <i>Mindanao Dance</i> (La Mama), <i>ADITL</i>
+                 @ JACK); <i>YNCAST</i> (by Stacey Robinson @ JACK); 2017 & 2018 <i>La Mama Moves!</i>; Kate Bornstein; <i>Mindanao Dance</i> (La Mama), <i>ADITL</i>
                  (La Mama); <i>The Plain of Jars</i> (NYU); <i>Being</i> (NYU), "Medusa" and "Oddity" (TNC); Lighting & Set Design: <i>House or Home</i> 
                  (Park Avenue Armory); <i>The Workroom</i> (One Art Space); Music & Sound Design: <i>Don Quixote Takes New York</i> (Loco7); <i>The Violin</i> 
                  (59E59), <i>Gemini Stars/Scorpio Stars</i> (Pioneers Go East Collective); <i>Puppet-Shows</i> (Loco7), <i>Paisieu</i> (Target Margin); Video & Sound 
@@ -519,6 +519,7 @@ WP api usage:
                  (Triskelion Arts); <i>Sound Departures</i> (La Mama)
 
               </p>
+           </div>
            <div class="bioDiv">
               <img class="bioPic" src="./images/biopics/dg.jpg"></img>
               <p>
