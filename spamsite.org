@@ -473,7 +473,7 @@ WP api usage:
 
            <h3>Collaborators</h3>
            <div class="bioDiv">
-              <img class="bioPic" src="./images/biopics/jaime_sunwoo.jpg" />
+              <img class="bioPic" src="./images/biopics/jaime_sunwoo.jpg"></img>
               <p>
                   <b>Jaime Sunwoo (Artist, Performer)</b> is a Korean-American multidisciplinary artist from Brooklyn, New York. She combines 
                   video, audio, sculpture, and storytelling to create sensory performances in galleries, theaters, and public spaces. 
@@ -485,7 +485,7 @@ WP api usage:
               </p>
            </div>
            <div class="bioDiv">
-              <img class="bioPic" src="./images/biopics/matt_chilton.jpg" />
+              <img class="bioPic" src="./images/biopics/matt_chilton.jpg"></img>
               <p>
                   <b>Matt Chilton (Sound Designer, Composer)</b> is a New York native and Brooklyn-based musician and producer focused on 
                   building immersive soundscapes from improvisations and unconventional sources. He previously worked with Jaime 
@@ -496,7 +496,7 @@ WP api usage:
               </p>
            </div>
            <div class="bioDiv">
-              <img class="bioPic" src="./images/biopics/chris_ignacio.jpg" />
+              <img class="bioPic" src="./images/biopics/chris_ignacio.jpg" ></img>
               <p>
                   <b>Chris Ignacio (Producer)</b> is a New York-based theatre artist, musician, puppeteer, and educator. He has toured nationally 
                   and abroad since earning his BFA from The Boston Conservatory at Berklee. He is a current Culture Push Fellow, 
@@ -507,7 +507,20 @@ WP api usage:
               </p>
            </div>
            <div class="bioDiv">
-              <img class="bioPic" src="./images/biopics/dg.jpg" />
+              <img class="bioPic" src="./images/biopics/hao_bai.jpg"></img>
+              <p>
+                 <b>Hao Bai (Lighting Designer)</b> works as a designer & technician in lights, sound, & video, and occasionally photographer. 
+                 Selected recent design credits: Lighting Design: <i>Shasta Geaux Pop</i> (CAC, Cincinnati); Run! <i>It’s Getting Ugly</i> (by Susana Cook 
+                 @ JACK); <i>YNCAST</i> (by Stacey Robinson @ JACK); 2017 & 2018 </i>La Mama Moves!</i>; Kate Bornstein; <i>Mindanao Dance</i> (La Mama), <i>ADITL</i>
+                 (La Mama); <i>The Plain of Jars</i> (NYU); <i>Being</i> (NYU), "Medusa" and "Oddity" (TNC); Lighting & Set Design: <i>House or Home</i> 
+                 (Park Avenue Armory); <i>The Workroom</i> (One Art Space); Music & Sound Design: <i>Don Quixote Takes New York</i> (Loco7); <i>The Violin</i> 
+                 (59E59), <i>Gemini Stars/Scorpio Stars</i> (Pioneers Go East Collective); <i>Puppet-Shows</i> (Loco7), <i>Paisieu</i> (Target Margin); Video & Sound 
+                 Design: <i>American Mill #2</i> (A.R.T/New York Theatres); Lighting & Sound design: <i>TELE-VISION</i> (Triskelion Arts); Gemini Stars 
+                 (Triskelion Arts); <i>Sound Departures</i> (La Mama)
+
+              </p>
+           <div class="bioDiv">
+              <img class="bioPic" src="./images/biopics/dg.jpg"></img>
               <p>
                   <b>Drew Gibson (Web Developer)</b> is a web designer/developer living and working in New York, NY. He has designed
                   the web presence of theater groups including the Nature Theater of Oklahoma, and previously worked with Jaime Sunwoo
