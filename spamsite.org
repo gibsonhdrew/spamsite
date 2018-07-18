@@ -286,6 +286,10 @@ WP api usage:
           margin-left: 3vw;
           margin-right: 3vw;
       }
+      .recipeSpamPic {
+          height: auto;
+          max-height: 100%;
+      }
       .pageTitle {
           /* border: 2px solid green; */
           padding-top: 10px;
