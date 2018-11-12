@@ -5,20 +5,23 @@
     <meta name='viewport' content='width=device-width,initial-scale=1' />
     <title>Specially Processed American Me</title>
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./style_new.css">
 </head>
 <body>
     <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     
     <!-- production version, optimized for size and speed -->
-    <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+   </div>
     <div class='nav'>
-        <a href="./index.html"><img class='pageTitle' src="./images/spam_title.png"></img></a><br/>
+        <div class="page-logo">
+            <a href="./index.html"><img src="images/logo.png"></a>
+        </div>
         <div class='navItems'>
-            <a href="./about.html"><h3 class='navItem notBoldText'>about</h3></a>
-            <a href="./recipes.html"><h3 class='navItem boldText'>submit a story</h3></a>
-            <a href="./contact.html"><h3 class='navItem notBoldText'>contact</h3></a>
+            <a href="./upcoming.html"><h3 class='navItem'>upcoming</h3></a>
+            <a href="./about.html"><h3 class='navItem'>about</h3></a>
+            <a href="./recipes.html"><h3 class='navItem'><u>stories and recipes</u></h3></a>
         </div>
     </div>
     <div id='blogBody' class='pageBody'>
@@ -42,6 +45,9 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="pageBody">
 
         <h3>Submit your own recipe or thoughts on SPAM:</h3>
         <form class="submitRecipeForm" action="https://formspree.io/jaimesunwoo@gmail.com" method="POST">
@@ -54,11 +60,11 @@
         </form> 
     </div>
     <br/>
-    <div class="blogPostBody nav">
+    <div class="nav">
         <div class="navItems">
-            <a href="http://eepurl.com/dxRak9" class="bottomNavItem notBoldText">Newsletter</a>
-            <a href="https://www.facebook.com/SpeciallyProcessed/" class="bottomNavItem notBoldText">Facebook</a>
-            <a href="https://www.instagram.com/speciallyprocessed/" class="bottomNavItem notBoldText">Instagram</a>
+            <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">newsletter</a>
+            <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">facebook</a>
+            <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">instagram</a>
         </div>
     </div>
     <script>
