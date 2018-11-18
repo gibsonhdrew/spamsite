@@ -16,13 +16,14 @@ body {
     .page-logo img {
         height: 200px;
     }
+    .page-logo img:hover {
+      height: 210px;
+      padding-top: 7px;
+      margin-bottom: -21px;
+    }
 }
 
-.page-logo img:hover {
-    height: 210pxcontact;
-    padding-top: 7px;
-    margin-bottom: -21px;
-}
+
 
 .bioDiv {
     display: inline;
@@ -53,7 +54,7 @@ body {
 
 .photograph {
     align-self: flex-start;
-    width:47%;
+    width:48%;
     height: auto;
     margin-bottom: 10px;
     border: 3px solid #ffcad5;
@@ -94,8 +95,18 @@ a {
          animation: fadein 0.6s;
 }
 
+@media screen and (min-device-width: 800px) {
+  .nav {
+    margin-left: 13vw;
+    margin-right: 13vw;
+  }
+}
+
 .displayRecipes {
     visibility: hidden;
+}
+
+@media screen and (min-device-width: 800px) {
 }
 
 .sendRecipeSendButton {
@@ -105,8 +116,15 @@ a {
     border-radius: 4px;
     font-weight: bold;
 }
+
+@media screen and (min-device-width: 800px) {
+}
+
 .sendRecipeSendButton:hover {
     cursor: pointer;
+}
+
+@media screen and (min-device-width: 800px) {
 }
 
 .sendRecipeAuthor {
@@ -116,12 +134,18 @@ a {
     border: 3px solid #ffcad5;
 }
 
+@media screen and (min-device-width: 800px) {
+}
+
 .sendRecipeText {
     border-radius: 5px;
     width: 70%;
     height: 300px;
     font-size: 16px;
     border: 3px solid #ffcad5;
+}
+
+@media screen and (min-device-width: 800px) {
 }
 
 .closeRecipeButton {
@@ -141,6 +165,9 @@ a {
     visibility: hidden;
 }
 
+@media screen and (min-device-width: 800px) {
+}
+
 .boldText2 {
     font-weight: bold;
 }
@@ -155,7 +182,7 @@ closeRecipeButton:hover {
     overflow: scroll;
     background-color: #ffffff;
     border: 3px solid #ffcad5;
-    opacity: 0.94;
+    opacity: 0.97;
     text-align: left;
     height: 300px;
     padding-left: 16px;
@@ -165,8 +192,14 @@ closeRecipeButton:hover {
     overflow-x: hidden;
 }
 
+@media screen and (min-device-width: 800px) {
+}
+
 .recipeContainer:hover {
     cursor: pointer;
+}
+
+@media screen and (min-device-width: 800px) {
 }
 
 .recipeContainer:hover > .recipeTitle {
@@ -189,7 +222,21 @@ closeRecipeButton:hover {
     margin: 0 auto;
 }
 
+@media screen and (min-device-width: 800px) {
+}
+
 .recipeContainer {
+    position: relative;
+    /* border: 2px solid orange; */
+    width: 28%;
+    max-height: 14em;
+    margin-right: 1.5%;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+@media screen and (min-device-width: 800px) {
+  .recipeContainer {
     position: relative;
     /* border: 2px solid orange; */
     width: 18%;
@@ -197,6 +244,7 @@ closeRecipeButton:hover {
     margin-right: 1.5%;
     margin-bottom: 14px;
     text-align: center;
+  }
 }
 
 .recipeSpamPic {
@@ -207,14 +255,33 @@ closeRecipeButton:hover {
     z-index: 499;
 }
 
+@media screen and (min-device-width: 800px) {
+  .recipeSpamPic {
+  }
+}
+
 .recipeContentDiv {
+    position: fixed;
+    width: 90vw;
+    top: 150px;
+    left: 5vw;
+    opacity: 0.99;
+    z-index: 600;
+}
+
+@media screen and (min-device-width: 800px) {
+  .recipeContentDiv {
     position: relative;
     width: 300px;
+    top: 0;
+    left: 0;
     margin-top: -304px;
     margin-left: -65px;
     opacity: 0.99;
     z-index: 600;
+  }
 }
+
 .recipesDiv {
     /* border: 2px solid cyan; */
     margin-top: 25px;
@@ -223,12 +290,17 @@ closeRecipeButton:hover {
     flex-wrap: wrap;
 }
 
+@media screen and (min-device-width: 800px) {
+  .recipesDiv {
+  }
+}
+
 .navItems {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 25px;
 }
 
 .navItem, .bottomNavItem {
@@ -249,7 +321,7 @@ closeRecipeButton:hover {
 
 @media screen and (min-device-width: 800px) {
     .navItem {
-
+      width: 17.5vw;
     }
 }
 
@@ -266,6 +338,10 @@ closeRecipeButton:hover {
     .pageBody p {
         max-width: 55vw;
     }
+}
+
+.contactBody {
+  min-height: 200px;
 }
 
 .pageBody {
