@@ -6,6 +6,7 @@
     <title>Specially Processed American Me</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style_new.css">
 </head>
 <body>
@@ -19,14 +20,17 @@
         <div class="page-logo">
             <a href="./index.html"><img src="images/logo.png"></a>
         </div>
-        <div class='navItems'>
-            <a href="./upcoming.html"><h3 class='navItem'>upcoming</h3></a>
-            <a href="./about.html"><h3 class='navItem'>about</h3></a>
-            <a href="./recipes.html"><h3 class='navItem'><u>stories and recipes</u></h3></a>
-            <a href="./contact.html"><h3 class='navItem'>contact</h3></a>
+
+        <div class="img_nav">
+          <a href="contact.html"><img src="images/home/contact_icon.png"></a>
+          <a href="performances.html"><img src="images/home/performances_icon.png"></a>
+          <a href="recipes.html"><img src="images/home/submitastory_icon.png"></a>
+          <a href="upcoming.html"><img src="images/home/upcoming_icon.png"></a>
+          <a href="workshops.html"><img src="images/home/workshops_icon.png"></a>
         </div>
+
     </div>
-    <div id='blogBody' class='pageBody'>
+    <div id="blogBody" class='pageBody recipeSomething'>
 
         <div class="transparentBG" v-on:click="closeRecipeText"></div>
 
@@ -61,7 +65,6 @@
             <p>Your story will be published after it is approved. In the meantime, check out other stories hot off the skillet.</p>
         </form> 
     </div>
-    <br/>
     <div class="nav">
         <div class="navItems">
             <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">newsletter</a>

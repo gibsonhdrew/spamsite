@@ -6,64 +6,75 @@
     <title>Specially Processed American Me</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style_new.css">
 </head>
 <body>
-    <!-- development version, includes helpful console warnings -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-
-    <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="js/photos.js"></script>
+
     <div class='nav'>
         <div class="page-logo">
             <a href="./index.html"><img src="images/logo.png"></a>
         </div>
-        <div class='navItems'>
-            <a href="./upcoming.html"><h3 class='navItem'>Upcoming</h3></a>
-            <a href="./about.html"><h3 class='navItem'>About</h3></a>
-            <a href="./recipes.html"><h3 class='navItem'>Stories and Recipes</h3></a>
-            <a href="./contact.html"><h3 class='navItem'>contact</h3></a>
+
+        <div class="img_nav">
+          <a href="contact.html"><img src="images/home/contact_icon.png"></a>
+          <a href="performances.html"><img src="images/home/performances_icon.png"></a>
+          <a href="recipes.html"><img src="images/home/submitastory_icon.png"></a>
+          <a href="upcoming.html"><img src="images/home/upcoming_icon.png"></a>
+          <a href="workshops.html"><img src="images/home/workshops_icon.png"></a>
         </div>
+
     </div>
 
     <div class='pageBody' id="performance-photos">
         <h3>Performances</h3>
+        <div id="enlargedImageDiv" v-on:click="closeEnlargedImage">
+          <img id="enlargedImage">
+        </div>
+
         <div class="photo-container">
-            <img class="photograph" src="images/photos-performance/1.jpg">
-            <img class="photograph" src="images/photos-performance/2.jpg">
-            <img class="photograph" src="images/photos-performance/3.jpg">
-            <img class="photograph" src="images/photos-performance/4.jpg">
-            <img class="photograph" src="images/photos-performance/5.jpg">
-            <img class="photograph" src="images/photos-performance/6.jpg">
-            <img class="photograph" src="images/photos-performance/7.jpg">
-            <img class="photograph" src="images/photos-performance/8.jpg">
-            <img class="photograph" src="images/photos-performance/9.jpg">
-            <img class="photograph" src="images/photos-performance/10.jpg">
-            <img class="photograph" src="images/photos-performance/11.jpg">
-            <img class="photograph" src="images/photos-performance/12.jpg">
-            <img class="photograph" src="images/photos-performance/13.jpg">
-            <img class="photograph" src="images/photos-performance/14.jpg">
-            <img class="photograph" src="images/photos-performance/15.jpg">
-            <img class="photograph" src="images/photos-performance/17.jpg">
-            <img class="photograph" src="images/photos-performance/18.jpg">
-            <img class="photograph" src="images/photos-performance/19.jpg">
-            <img class="photograph" src="images/photos-performance/20.jpg">
-            <img class="photograph" src="images/photos-performance/21.jpg">
-            <img class="photograph" src="images/photos-performance/22.jpg">
-            <img class="photograph" src="images/photos-performance/23.jpg">
-            <img class="photograph" src="images/photos-performance/24.jpg">
-            <img class="photograph" src="images/photos-performance/25.jpg">
-            <img class="photograph" src="images/photos-performance/27.jpg">
+          <img class="photograph"
+            v-for="image in images"
+            v-bind:id="image.idNum"
+            v-bind:src="image.source"
+            v-on:click="enlargeImage"
+          >
         </div>
-        <div>
-          <img src="http://bestanimations.com/Site/Construction/under-construction-gif-6.gif">
-        </div>
+
     </div>
-    <br/>
+
+    <script>
+     const performancePhotos = new Vue({
+       el: '#performance-photos',
+       data: {
+         imageNums: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,24,25,27],
+         images: []
+       },
+       methods: {
+         enlargeImage(event) {
+           document.getElementById("enlargedImageDiv").style.visibility="visible";
+           document.getElementById("enlargedImage").src=event.target.src;
+         },
+         closeEnlargedImage(event) {
+           document.getElementById("enlargedImageDiv").style.visibility="hidden";
+         }
+       },
+       created () {
+         for (let imageNum of this.imageNums) {
+           this.images.push({
+             "source": "images/photos-performance/" + imageNum + ".jpg",
+             "idNum": "ph" + imageNum
+           });
+         }
+       }
+     });
+    </script>
 
     <div class="nav">
         <div class="navItems">
-            <a href="http://eepurl.com/dxRak9" class="navItem"></a>Newsletter</a>
+            <a href="http://eepurl.com/dxRak9" class="navItem">Newsletter</a>
             <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem">Facebook</a>
             <a href="https://www.instagram.com/speciallyprocessed/" class="navItem">Instagram</a>
         </div>

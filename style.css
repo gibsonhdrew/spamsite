@@ -11,6 +11,10 @@ a {
     text-decoration: underline;
     color: inherit;
 }
+.photograph:hover {
+  cursor: pointer;
+  border: 9px solid black;
+}
 .transparentBG {
     position: fixed;
     top: 0;
