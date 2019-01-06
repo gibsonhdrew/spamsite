@@ -19,15 +19,18 @@
         <div class="page-logo">
             <a href="./index.html"><img src="images/logo.png"></a>
         </div>
-        <div class="img_nav">
-          <a href="contact.html"><img src="images/home/contact_icon.png"></a>
-          <a href="performances.html"><img src="images/home/performances_icon.png"></a>
-          <a href="recipes.html"><img src="images/home/submitastory_icon.png"></a>
-          <a href="upcoming.html"><img src="images/home/upcoming_icon.png"></a>
-          <a href="workshops.html"><img src="images/home/workshops_icon.png"></a>
+
+        <div class="navItems">
+            <a href="./upcoming.html" class="navItem">Upcoming</a>
+            <a href="./performances.html" class="navItem">Performances</a>
+            <a href="./workshops.html" class="navItem">Workshops</a>
+            <a href="./recipes.html" class="navItem">Submit a Story</a>
+            <a href="./about.html" class="navItem">About</a>
+            <a href="./contact.html" class="navItem">Contact</a>
         </div>
+
+
     </div>
-    <br>
     <div class='pageBody' id="workshop-photos">
         <h3>Workshops</h3>
         <div id="enlargedImageDiv" v-on:click="closeEnlargedImage">
@@ -35,12 +38,15 @@
         </div>
 
         <div class="photo-container">
-          <img class="photograph"
-            v-for="image in images"
-            v-bind:id="image.idNum"
-            v-bind:src="image.source"
-            v-on:click="enlargeImage"
-          >
+            <div class="photo-subcontainer"
+                 v-for="image in images"
+            >
+                <img class="photograph"
+                    v-bind:id="image.idNum"
+                    v-bind:src="image.source"
+                    v-on:click="enlargeImage"
+                >
+            </div>
         </div>
 
     </div>
@@ -50,7 +56,7 @@
      const workshopPhotos = new Vue({
        el: '#workshop-photos',
        data: {
-         imageNums: [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,26,27],
+         imageNums: [3,6,9,12,15,17,18,19,21,22,24,25,28,29,30,31],
          images: []
        },
        methods: {
