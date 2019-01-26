@@ -96,7 +96,6 @@
          enlargeImage(event) {
            document.getElementById("enlargedImageDiv").style.visibility="visible";
            document.getElementById("enlargedImage").src=event.target.src;
-             console.log('blah');
            let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
            if (index <= 18) {
                document.getElementById("photo-credit").innerText="Photo credit Andrea Januta";
