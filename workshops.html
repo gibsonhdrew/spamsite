@@ -67,6 +67,7 @@
         </section>
 
         <div id="enlargedImageDiv" v-on:click="closeEnlargedImage">
+          <div id="photo-credit"></div>
           <img id="enlargedImage">
         </div>
 
@@ -95,6 +96,12 @@
          enlargeImage(event) {
            document.getElementById("enlargedImageDiv").style.visibility="visible";
            document.getElementById("enlargedImage").src=event.target.src;
+           let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
+           if (index <= 18) {
+               document.getElementById("photo-credit").innerText="Photo credit Andrea Januta";
+           } else {
+               document.getElementById("photo-credit").innerText="Photo credit Taj Birkett";
+           }
          },
          closeEnlargedImage(event) {
            document.getElementById("enlargedImageDiv").style.visibility="hidden";
