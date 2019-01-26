@@ -258,7 +258,7 @@ body {
    }
  }
 a {
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: bold;
     color: inherit;
 }
@@ -612,6 +612,10 @@ closeRecipeButton:hover {
          animation: fadein 0.6s;
 }
 
+.pageBody a {
+    text-decoration: underline;
+}
+
 @media screen and (min-device-width: 800px) {
     .pageBody {
         margin-left: 13vw;
@@ -620,6 +624,10 @@ closeRecipeButton:hover {
         padding-right: 22px;
         margin-top: 20px;
     }
+
+    .pageBody img {
+        max-width: 100%;
+    }
 }
 
 .pageBody img {
@@ -627,6 +635,10 @@ closeRecipeButton:hover {
     opacity: 0.9;
 }
 
+.wp-image-89 {
+    width: 100%;
+    height: 100%;
+}
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
