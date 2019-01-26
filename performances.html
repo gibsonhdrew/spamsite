@@ -31,17 +31,18 @@
 
     <div class='pageBody' id="performance-photos">
         <section class="eventLocations">
-            <h3>Upcoming:</h3>
+            <h3>upcoming:</h3>
             <h4>MARCH 23, Brooklyn Arts Exchange Upstart Program Showcase</h4>
             <div class="pastEvents">
                 <h4>MAY 12-15, WIP showing produced by Leviathan Lab at The Tank</h4>
-                <h3>Past:</h3>
+                <h3>past:</h3>
                 <h4>Oye! Avant Garde Festival at JACK</h4>
                 <h4>FailSafe Festival at The Producers Club</h4>
             </div>
         </section>
 
         <div id="enlargedImageDiv" v-on:click="closeEnlargedImage">
+          <div id="photo-credit"></div>
           <img id="enlargedImage">
         </div>
 
@@ -52,6 +53,7 @@
             <img class="photograph"
                  v-bind:id="image.idNum"
                  v-bind:src="image.source"
+                 v-bind:credit="image.credit"
                  v-on:click="enlargeImage"
             >
         </div>
@@ -62,13 +64,19 @@
      const performancePhotos = new Vue({
        el: '#performance-photos',
        data: {
-         imageNums: [1,2,3,8,10,11,19,20,22,24,25,27],
+         imageNums: [1,2,3,8,10,11,19,20,22,24,25,27,28,29],
          images: []
        },
        methods: {
          enlargeImage(event) {
            document.getElementById("enlargedImageDiv").style.visibility="visible";
            document.getElementById("enlargedImage").src=event.target.src;
+             let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
+             if (index <= 27) {
+                 document.getElementById("photo-credit").innerText="Photo credit Mari Uchida";
+             } else {
+                 document.getElementById("photo-credit").innerText="Photo credit Jaime Sunwoo";
+             }
          },
          closeEnlargedImage(event) {
            document.getElementById("enlargedImageDiv").style.visibility="hidden";
@@ -78,7 +86,8 @@
          for (let imageNum of this.imageNums) {
            this.images.push({
              "source": "images/photos-performance/" + imageNum + ".jpg",
-             "idNum": "ph" + imageNum
+             "idNum": "ph" + imageNum,
+             "credit": "Mari Uchida"
            });
          }
        }

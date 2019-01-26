@@ -161,6 +161,15 @@ body {
     flex-wrap: wrap;
 }
 
+#photo-credit {
+    font-weight: bold;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 .photo-subcontainer {
     align-self: flex-start;
     overflow: hidden;
