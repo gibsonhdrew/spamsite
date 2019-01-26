@@ -5,86 +5,32 @@
     <meta name='viewport' content='width=device-width,initial-scale=1' />
     <title>Specially Processed American Me</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <style media='screen' type='text/css'>
-        body {
-            font-family: "Open Sans", sans-serif;
-            margin-top: 0;
-            margin-left: 0;
-            width: 100vw;
-        }
-        .size-full {
-            min-width: 100%;
-            max-width: 100%;
-            width: 100%;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .pageTitle {
-            border: 2px solid green;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            max-height: 40px;
-            margin: 0;
-            text-align: center;
-        }
-        .nav {
-            border: 2px solid blue;
-            text-align: center;
-        }
-        .navItems {
-            display: inline-block;
-            border: 2px solid cyan;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .navItem {
-            display: inline-block;
-            width: 220px;
-            border: 2px solid violet;
-            padding-top: 6px;
-            padding-bottom: 6px;
-            margin: 0;
-        }
-        .pageBody {
-            border: 2px solid red;
-            margin-left: 13vw;
-            margin-right: 13vw;
-            -webkit-animation: fadein 0.6s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 0.6s; /* Firefox < 16 */
-             -ms-animation: fadein 0.6s; /* Internet Explorer */
-              -o-animation: fadein 0.6s; /* Opera < 12.1 */
-                 animation: fadein 0.6s;
-        }
-        @keyframes fadein {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-    </style>
-    <style media='screen' type='text/css'>
-        @media screen and (max-device-width: 800px) {
-        
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style_new.css">
 </head>
 <body>
     <!-- development version, includes helpful console warnings -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
     
     <!-- production version, optimized for size and speed -->
-    <!--  <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <div class='nav'>
-        <a href="./index.html"><h2 class='pageTitle'>Specially Processed American Me</h2></a>
-        <div class='navItems'>
-            <a href="./upcoming.html"><h3 class='navItem'>Upcoming</h3></a>
-            <a href="./about.html"><h3 class='navItem'>About</h3></a>
-            <a href="./recipes.html"><h3 class='navItem'>Stories and Recipes</h3></a>
+        <div class="page-logo">
+            <a href="./index.html"><img src="images/logo.png"></a>
         </div>
+        <div class="navItems">
+            <a href="./about.html" class="navItem">about</a>
+            <a href="./upcoming.html" class="navItem underlined">upcoming</a>
+            <a href="./performances.html" class="navItem">performances</a>
+            <a href="./workshops.html" class="navItem">workshops</a>
+            <a href="./recipes.html" class="navItem">submit a story</a>
+            <a href="./contact.html" class="navItem">contact</a>
+        </div>
+
     </div>
-    <div id='homeBody' class='pageBody'>
-        <div v-for="post in posts">
+    <div id='homeBody'>
+        <div class=pageBody v-for="post in posts">
             <h2 v-html="post.title"></h2>
             <p v-html="post.content"></p>
         </div>
@@ -99,7 +45,6 @@
                 fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
                     .then(response => response.json())
                     .then(json => {
-                        console.log(json)
                         for (var x of json) {
                             if (x.tags[0] == "35776") {
                                 this.posts.push({"title": x.title.rendered, "content": x.content.rendered})
@@ -109,5 +54,12 @@
             }
         })
     </script>
+    <div class="nav">
+        <div class="navItems">
+            <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">newsletter</a>
+            <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">facebook</a>
+            <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">instagram</a>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1' />
+    <title>Specially Processed American Me</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style_new.css">
+</head>
+<body>
+    <!-- development version, includes helpful console warnings -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    
+    <!-- production version, optimized for size and speed -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <div class='nav'>
+        <div class="page-logo">
+            <a href="./index.html"><img src="images/logo.png"></a>
+        </div>
+
+        <div class="navItems">
+            <a href="./about.html" class="navItem">about</a>
+            <a href="./upcoming.html" class="navItem">upcoming</a>
+            <a href="./performances.html" class="navItem">performances</a>
+            <a href="./workshops.html" class="navItem underlined">workshops</a>
+            <a href="./recipes.html" class="navItem">submit a story</a>
+            <a href="./contact.html" class="navItem">contact</a>
+        </div>
+
+
+    </div>
+    <div class='pageBody' id="workshop-photos">
+        <section class="eventLocations">
+            <h3>upcoming:</h3>
+            <h4>MARCH 6, Charles B Wang Center at Stony Brook University</h4>
+            <h3>past:</h3>
+            <h4>Asian American Arts Alliance</h4>
+            <h4>Gallery Madison Park</h4>
+            <h4>Open Source Gallery</h4>
+
+            <div class="eventQuote">
+                <h4>
+                    <i>"It’s culinary anthropology. She gave a thorough and interactive history of SPAM and how it became a staple of the Asian/AsAm diet. And, she gave everyone a chance to tell their stories about their relationship with SPAM... The workshop I attended had people get emotional... That’s the power of food, and SPAM."</i>
+
+                </h4>
+                <div class="attribution">
+                    <h4>
+                        <a href="https://www.hapamag.com/july-2018-popup/specially-processed-american-me">
+                        –Melissa Slaughter, <i>
+                        Hapa Mag
+                        </a>
+                    </i></h4>
+                </div>
+            </div>
+
+            <div class="sponsoredBy">
+                <h4>Sponsored by</h4>
+                <div class="logos">
+                    <img src="./images/logos/baro.png">
+                    <img src="./images/logos/insa.png">
+                    <img src="./images/logos/kunjip.png">
+                    <img src="./images/logos/ssam.png">
+                </div>
+            </div>
+        </section>
+
+        <div id="enlargedImageDiv" v-on:click="closeEnlargedImage">
+          <div id="photo-credit"></div>
+          <img id="enlargedImage">
+        </div>
+
+        <div class="photo-container">
+            <div class="photo-subcontainer"
+                 v-for="image in images"
+            >
+                <img class="photograph"
+                    v-bind:id="image.idNum"
+                    v-bind:src="image.source"
+                    v-on:click="enlargeImage"
+                >
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+     const workshopPhotos = new Vue({
+       el: '#workshop-photos',
+       data: {
+         imageNums: [3,6,9,12,15,17,18,19,21,22,24,25,28,29,30,31],
+         images: []
+       },
+       methods: {
+         enlargeImage(event) {
+           document.getElementById("enlargedImageDiv").style.visibility="visible";
+           document.getElementById("enlargedImage").src=event.target.src;
+             console.log('blah');
+           let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
+           if (index <= 18) {
+               document.getElementById("photo-credit").innerText="Photo credit Andrea Januta";
+           } else {
+               document.getElementById("photo-credit").innerText="Photo credit Taj Birkett";
+           }
+         },
+         closeEnlargedImage(event) {
+           document.getElementById("enlargedImageDiv").style.visibility="hidden";
+         }
+       },
+       created () {
+         for (let imageNum of this.imageNums) {
+           this.images.push({
+             "source": "images/photos-workshop/" + imageNum + ".jpg",
+             "idNum": "ph" + imageNum
+           });
+         }
+       }
+     });
+    </script>
+
+    <div class="nav">
+        <div class="navItems">
+            <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">newsletter</a>
+            <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">facebook</a>
+            <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">instagram</a>
+        </div>
+    </div>
+</body>
+</html>
