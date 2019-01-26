@@ -172,7 +172,7 @@ body {
 
 @media screen and (max-device-width: 800px) {
     #photo-credit {
-        bottom: 90px;
+        bottom: 50px;
     }
 }
 
