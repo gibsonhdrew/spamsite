@@ -578,12 +578,12 @@ closeRecipeButton:hover {
 }
 
 
-.pageBody p {
+.pageBody p, .recipeBody p {
     max-width: 100%;
 }
 
 @media screen and (min-device-width: 800px) {
-    .pageBody p {
+    .pageBody p, .recipeBody p {
         max-width: 55vw;
     }
 }
@@ -594,6 +594,12 @@ closeRecipeButton:hover {
 
 .pageBody {
     background-color: white;
+}
+.recipeBody {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.pageBody, .recipeBody {
     font-size: 14px;
     line-height: 160%;
     margin-bottom: 12px;
@@ -612,12 +618,12 @@ closeRecipeButton:hover {
          animation: fadein 0.6s;
 }
 
-.pageBody a {
+.pageBody a, .recipeBody a {
     text-decoration: underline;
 }
 
 @media screen and (min-device-width: 800px) {
-    .pageBody {
+    .pageBody, .recipeBody {
         margin-left: 13vw;
         margin-right: 13vw;
         padding-left: 22px;
@@ -625,12 +631,12 @@ closeRecipeButton:hover {
         margin-top: 20px;
     }
 
-    .pageBody img {
+    .pageBody img, .recipeBody img {
         max-width: 100%;
     }
 }
 
-.pageBody img {
+.pageBody img, .recipeBody img {
     border-radius: 5px;
     opacity: 0.9;
 }
