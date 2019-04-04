@@ -32,11 +32,13 @@
     <div class='pageBody' id="performance-photos">
         <section class="eventLocations">
             <h3>upcoming:</h3>
-            <h4>MARCH 23, Brooklyn Arts Exchange Upstart Program Showcase</h4>
+            <h4>
+                MAY 12-15, WIP showing produced by Leviathan Lab at The Tank - 
+                <a href="https://www.brownpapertickets.com/event/4067101">Get Tickets</a>
+            </h4>
             <div class="pastEvents">
-                <h4>MAY 12-15, WIP showing produced by Leviathan Lab at The Tank 
-                    <a href="https://www.brownpapertickets.com/event/4067101">Get Tickets</a>
-                </h4>
+                <h4>MARCH 23, Brooklyn Arts Exchange Upstart Program Showcase</h4>
+                <h4>MAY 12-15, WIP showing produced by Leviathan Lab at The Tank</h4>
                 <h3>past:</h3>
                 <h4>Oye! Avant Garde Festival at JACK</h4>
                 <h4>FailSafe Festival at The Producers Club</h4>
@@ -72,12 +74,12 @@
          enlargeImage(event) {
            document.getElementById("enlargedImageDiv").style.visibility="visible";
            document.getElementById("enlargedImage").src=event.target.src;
-             let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
-             if (index <= 27) {
-                 document.getElementById("photo-credit").innerText="Photo credit Mari Uchida";
-             } else {
-                 document.getElementById("photo-credit").innerText="Photo credit Jaime Sunwoo";
-             }
+           let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
+           if (index <= 27) {
+               document.getElementById("photo-credit").innerText="Photo credit Mari Uchida";
+           } else {
+               document.getElementById("photo-credit").innerText="Photo credit Jaime Sunwoo";
+           }
          },
          closeEnlargedImage(event) {
            document.getElementById("enlargedImageDiv").style.visibility="hidden";
