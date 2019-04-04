@@ -42,7 +42,7 @@
                 posts: []
             },
             created () {
-                fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
+                fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100?filter[orderby]=date&order=desc')
                     .then(response => response.json())
                     .then(json => {
                         for (var x of json) {
