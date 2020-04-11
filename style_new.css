@@ -92,6 +92,12 @@ body {
     margin-top: 40px;
 }
 
+.mayorsOfficeLogo {
+  min-height: 50px;
+  max-height: 50px;
+  margin-right: 25px;
+}
+
 .logos {
     margin-top: 20px;
     display: flex;
