@@ -76,7 +76,9 @@
            document.getElementById("enlargedImageDiv").style.visibility="visible";
            document.getElementById("enlargedImage").src=event.target.src;
            let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
-           if (index == 9 || index == 11) {
+           if (index == 12) {
+             document.getElementById("photo-credit").innerText="";
+           } else if (index == 9 || index == 11) {
              document.getElementById("photo-credit").innerText="Photo credit Leonardo March";
            } else {
              document.getElementById("photo-credit").innerText="Photo credit Mari Uchida";
