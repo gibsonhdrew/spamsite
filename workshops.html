@@ -187,8 +187,14 @@
               .replace(/^\D+/g, '')
               .replace('.jpg', '')
               .replace('.png', '');
-            if (index == 33 || 34 || 35 || 36 || 37 || 38 || 39 || 40 || 41) {
+            if (index == 33 || 34 || 35 || 36 || 37) {
               document.getElementById('photo-credit').innerText = '';
+            } else if (index == 38 || 39 || 40 || 41) {
+              document.getElementById('photo-credit').innerText =
+                'Photo courtesy of the Asian American Cultural Center at Yale University';
+            } else if (index == 37) {
+              document.getElementById('photo-credit').innerText =
+                'Photo courtesy of The Wang Center';
             } else if (index <= 18) {
               document.getElementById('photo-credit').innerText =
                 'Photo credit Andrea Januta';
