@@ -187,8 +187,11 @@
               .replace(/^\D+/g, '')
               .replace('.jpg', '')
               .replace('.png', '');
-            if (index == 33 || 34 || 35 || 36 || 37) {
+            if (index == 35 || 36) {
               document.getElementById('photo-credit').innerText = '';
+            } else if (index == 33 || 34) {
+              document.getElementById('photo-credit').innerText =
+                'Photo courtesy of the Museum of Food and Drink';
             } else if (index == 38 || 39 || 40 || 41) {
               document.getElementById('photo-credit').innerText =
                 'Photo courtesy of the Asian American Cultural Center at Yale University';
