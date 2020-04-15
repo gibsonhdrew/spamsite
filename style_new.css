@@ -258,6 +258,7 @@ body {
 
  @media screen and (max-device-width: 800px) {
    #enlargedImage {
+     -webkit-transform: translateX(0%);
      max-width: 86%;
      left: 6%;
      top: 25vh;
