@@ -637,13 +637,12 @@ closeRecipeButton:hover {
         padding-right: 22px;
         margin-top: 20px;
     }
-
-    .pageBody img, .recipeBody img {
-        max-width: 100%;
-    }
 }
 
 .pageBody img, .recipeBody img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
     border-radius: 5px;
     opacity: 0.9;
 }
@@ -652,6 +651,7 @@ closeRecipeButton:hover {
     width: 100%;
     height: 100%;
 }
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
