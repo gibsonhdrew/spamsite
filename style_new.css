@@ -644,7 +644,10 @@ closeRecipeButton:hover {
     opacity: 0.9;
 }
 
-.pageBody > p > p > img, .pageBody > p > p > a > img, .pageBody > p > p > span > img {
+.pageBody > p > p > img, 
+.pageBody > p > p > a > img, 
+.pageBody > p > p > span > img {
+.pageBody > p > figure > img {
     max-width: 100%;
     height: auto;
     width: auto;
