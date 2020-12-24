@@ -640,11 +640,14 @@ closeRecipeButton:hover {
 }
 
 .pageBody img, .recipeBody img {
+    border-radius: 5px;
+    opacity: 0.9;
+}
+
+.pageBody > p > figure img {
     max-width: 100%;
     height: auto;
     width: auto;
-    border-radius: 5px;
-    opacity: 0.9;
 }
 
 .wp-image-89 {
