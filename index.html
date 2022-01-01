@@ -1,216 +1,273 @@
 <!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width,initial-scale=1' />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Specially Processed American Me</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <style media='screen' type='text/css'>
-    a {
-      text-decoration: none;
-      color: #ff626e;
-    }
-
-    .italic {
-      font-style: italic;
-    }
-
-    .collaborator {
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .bioPic {
-      opacity: 0.9;
-      width: 120px;
-      height: 120px;
-      float: left;
-      clear: left;
-      border: 2px solid black;
-      margin-right: 12px;
-    }
-
-    .pageTitle {
-      color: #ff626e;
-    }
-    .aboutBody {
-      background-color: white;
-      padding-left: 15px;
-      padding-right: 20px;
-      padding-top: 5px;
-      padding-bottom: 10px;
-      margin-top: 5px;
-      margin-left: 5px;
-      margin-bottom: 5px;
-      width: 60vw;
-    }
-    .aboutBody p {
-      font-size: 18px;
-      line-height: 155%;
-    }
-
-    .navBar {
-      width: calc(60vw + 35px);
-      display: inline-block;
-      background-color: white;
-      margin-left: 5px;
-      margin-bottom: 10px;
-    }
-    .navToHome {
-      width: 13%;
-      background-color: #ffcad5;
-      padding-top: 10px;
-      display: inline;
-    }
-    .navToHome:hover {
-      opacity: 0.7;
-    }
-
-    .navBarLinks {
-      font-weight: bold;
-      vertical-align: top;
-      padding-left: 10px;
-      display: inline-block;
-      font-size: 20px;
-      line-height: 155%;
-    }
-
-    .pageContent {
-      background-color: white;
-    }
-
-    .pinkBG { background-color: #ffcad5; }
-    .lightPinkBG { background-color: #ffebf0; }
-    .pinkBG, .lightPinkBG {
-      width: 100vw;
-      min-height: 100vh;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    @media screen and (min-device-width: 801px) {
-
-      .pageContent {
-        width: 74vw;
-        margin-left: 2vw;
-        margin-top: 20px;
+    <style media="screen" type="text/css">
+      a {
+        text-decoration: none;
+        color: #ff626e;
       }
 
-      .aboutImg img {
-        width: 30vw;
-        top: 32vh;
-        left: 34vw;
-        position: absolute;
-      }
-      .aboutImg img:hover {
-        width: 32vw;
-        margin-top: -1vh;
-        margin-left: -1vw;
-      }
-
-      .navImg img{
-        position: absolute;
-      }
-      .nav1 {
-        width: 18vw;
-        left: 42vw;
-        top: 3vh;
-      }
-      .nav1:hover { width:20vw; }
-      .nav2 {
-        width: 14vw;
-        left: 16vw;
-        top: 28vh;
-      }
-      .nav2:hover { width:16vw; }
-      .nav3 {
-        width: 16vw;
-        left: 24vw;
-        top: 62vh;
-      }
-      .nav3:hover { width:18vw; }
-      .nav4 {
-        width: 17vw;
-        left: 66vw;
-        top: 32vh;
-      }
-      .nav4:hover { width:19vw; }
-      .nav5 {
-        width: 15vw;
-        left: 53vw;
-        top: 64vh;
-      }
-      .nav5:hover { width: 17vw; }
-      .navImg img:hover {
-        margin-left: -1vw;
-        margin-top: -1vw;
-      }
-
-    }
-
-    @media screen and (max-device-width: 800px) {
-
-      .homeBG {
+      body {
+        font-family: "Futura", "Nunito", sans-serif;
         background-color: #ffcad5;
       }
-
-      .aboutImg img {
-        margin-top: 20px;
-        width: 90%;
-        margin-left: 5%;
-        margin-bottom: 15px;
+      .italic {
+        font-style: italic;
       }
 
-      .navImg img{
-        width: 60vw;
-        margin-bottom: 2px;
+      .pageTitle {
+        color: #ff626e;
       }
 
-      .navImg:nth-child(even) {
-        margin-left: 5vw
-      }
-      .navImg:nth-child(odd) {
-        margin-left: 30vw;
+      .nav {
+        width: 100vw;
+        min-height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
       }
 
-    }
+      #premiere-modal-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+        opacity: 0.4;
+        z-index: -1;
+      }
+      #premiere-modal {
+        width: 40vw;
+        padding: 10px 10px;
+        background-color: white;
+        border-radius: 12px;
+        margin: 40px auto;
+        z-index: 300;
+        line-height: 0;
+      }
+      #premiere-modal-close {
+        position: absolute;
+        background-color: white;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        top: -40.1vw;
+        right: -40.2vw;
+        border-radius: 4px;
+        padding: 4px;
+        line-height: normal;
+        color: #444444;
+      }
+      #premiere-modal-close:hover {
+        cursor: pointer;
+        color: black;
+      }
+      .premiere-modal-img {
+        border-radius: 4px;
+        width: 100%;
+      }
+      .buytickets-link {
+        position: absolute;
+        width: 40vw;
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 10px;
+        width: 170px;
+        border-radius: 6px;
+        top: -18vw;
+        right: -27vw;
+        color: #0e2038;
+        font-weight: bold;
+        line-height: normal;
+      }
+      .buytickets-link:hover {
+        text-decoration: underline;
+      }
+      @media screen and (min-device-width: 801px) {
+        .aboutImg img {
+          width: 30vw;
+          top: 32vh;
+          left: 34vw;
+          position: absolute;
+        }
+        .aboutImg img:hover {
+          width: 32vw;
+          margin-top: -1vh;
+          margin-left: -1vw;
+        }
+
+        .navImg,
+        .navImg > a > img {
+          position: absolute;
+          z-index: -2;
+        }
+        .nav1 {
+          width: 18vw;
+          left: 42vw;
+          top: 3vh;
+        }
+        .nav1:hover {
+          width: 20vw;
+        }
+        .nav2 {
+          width: 14vw;
+          left: 16vw;
+          top: 28vh;
+        }
+        .nav2:hover {
+          width: 16vw;
+        }
+        .nav3 {
+          width: 16vw;
+          left: 24vw;
+          top: 62vh;
+        }
+        .nav3:hover {
+          width: 18vw;
+        }
+        .nav4 {
+          width: 17vw;
+          left: 66vw;
+          top: 32vh;
+        }
+        .nav4:hover {
+          width: 19vw;
+        }
+        .nav5 {
+          width: 15vw;
+          left: 53vw;
+          top: 64vh;
+        }
+        .nav5:hover {
+          width: 17vw;
+        }
+        .navImg img:hover {
+          margin-left: -1vw;
+          margin-top: -1vw;
+        }
+      }
+
+      @media screen and (max-device-width: 800px) {
+        .homeBG {
+          background-color: #ffcad5;
+        }
+
+        .aboutImg img {
+          margin-top: 20px;
+          width: 90%;
+          margin-left: 5%;
+          margin-bottom: 15px;
+        }
+
+        .navImg img {
+          width: 60vw;
+          margin-bottom: 2px;
+        }
+
+        .navImg:nth-child(even) {
+          margin-left: 5vw;
+        }
+        .navImg:nth-child(odd) {
+          margin-left: 30vw;
+        }
+
+        #premiere-modal {
+          padding: 4px;
+          width: 85vw;
+          margin: 20vh auto;
+          border-radius: 6px;
+        }
+        #premiere-modal-close {
+          top: -89vw;
+          right: -88vw;
+          color: #222222;
+        }
+        .premiere-modal-img {
+          border-radius: 4px;
+          width: 100%;
+        }
+        .buytickets-link {
+          top: -38vw;
+          right: -73vw;
+        }
+      }
     </style>
-</head>
-<body>
+    <script>
+      const init = () => {
+        const modal = document.getElementById("premiere-modal");
+        const backdrop = document.getElementById("premiere-modal-backdrop");
+        const modalCloseBtn = document.getElementById("premiere-modal-close");
+        const nav = document.getElementsByClassName("nav"); // main page content
 
-  <div class='pinkBG'>
-    <div class='aboutImg'>
-      <a href='./about.html'>
-        <img src='./images/home/about_icon.png'/>
-      </a>
-    </div>
-    <div class='navImg'>
-      <a href='./performances.html'>
-        <img class='nav1' src='./images/home/performances_icon.png'/>
-      </a>
-    </div>
-    <div class='navImg'>
-      <a href='./workshops.html'>
-        <img class='nav2' src='./images/home/workshops_icon.png'/>
-      </a>
-    </div>
-    <div class='navImg'>
-      <a href='./submit-a-story.html'>
-        <img class='nav3' src='./images/home/submitastory_icon.png'/>
-      </a>
-    </div>
-    <div class='navImg'>
-      <a href='./upcoming.html'>
-        <img class='nav4' src='./images/home/upcoming_icon.png'/>
-      </a>
-    </div>
-    <div class='navImg'>
-      <a href='./contact.html'>
-        <img class='nav5' src='./images/home/contact_icon.png'/>
-      </a>
-    </div>
-  </div>
+        modalCloseBtn.addEventListener(
+          "click",
+          () => {
+            modal.style.visibility = "hidden";
+            backdrop.style.visibility = "hidden";
+            nav[0].style.zIndex = 1;
+          },
+          false
+        );
+      };
 
-</body>
+      window.onload = init;
+    </script>
+  </head>
+  <body>
+    <div id="premiere-modal-backdrop"></div>
+    <div id="premiere-modal">
+      <img class="premiere-modal-img" src="./images/modal.jpg" />
+      <div style="position: relative; width: 0; height: 0">
+        <div id="premiere-modal-close">x</div>
+      </div>
+
+      <br />
+
+      <div style="position: relative; width: 0; height: 0">
+        <a
+          class="buytickets-link"
+          href="http://dixonplace.org/performances/spam"
+          >BUY TICKETS HERE</a
+        >
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="aboutImg">
+        <a href="./about.html">
+          <img src="./images/home/about_icon.png" />
+        </a>
+      </div>
+      <div class="navImg">
+        <a href="./performances.html">
+          <img class="nav1" src="./images/home/performances_icon.png" />
+        </a>
+      </div>
+      <div class="navImg">
+        <a href="./workshops.html">
+          <img class="nav2" src="./images/home/workshops_icon.png" />
+        </a>
+      </div>
+      <div class="navImg">
+        <a href="./recipes.html">
+          <img class="nav3" src="./images/home/submitastory_icon.png" />
+        </a>
+      </div>
+      <div class="navImg">
+        <a href="./upcoming.html">
+          <img class="nav4" src="./images/home/upcoming_icon.png" />
+        </a>
+      </div>
+      <div class="navImg">
+        <a href="./contact.html">
+          <img class="nav5" src="./images/home/contact_icon.png" />
+        </a>
+      </div>
+    </div>
+  </body>
 </html>
