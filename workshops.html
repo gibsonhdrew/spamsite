@@ -43,26 +43,18 @@
         <h3>upcoming:</h3>
 
         <h4>
-          We're currently booking workshops and lectures for 2021. In the
-          meantime, see <a href="/upcoming.html">upcoming events.</a>
+          We're currently booking workshops and lectures for 2022.<br />
+          In the meantime, come to our performances at Dixon Place from January
+          27 - February 19.<br />
+          <a href="http://dixonplace.org/performances/spam/">Tickets here</a>
         </h4>
 
         <h3>past:</h3>
-        <h4>
-          Museum of Food and Drink (MOFAD)
-        </h4>
-        <h4>
-          Yale University
-        </h4>
-        <h4>
-          Beyond Boundaries Exhibition at Korean Cultural Center New York
-        </h4>
-        <h4>
-          Wicket Leeks Exhibition at Flux Factory
-        </h4>
-        <h4>
-          Happy Family Night Market at Abrons Arts Center
-        </h4>
+        <h4>Museum of Food and Drink (MOFAD)</h4>
+        <h4>Yale University</h4>
+        <h4>Beyond Boundaries Exhibition at Korean Cultural Center New York</h4>
+        <h4>Wicket Leeks Exhibition at Flux Factory</h4>
+        <h4>Happy Family Night Market at Abrons Arts Center</h4>
         <h4>Asian American Political Activism Coalition at NYU</h4>
         <h4>
           Charles B Wang Center at Stony Brook University -
@@ -97,9 +89,7 @@
                 href="https://www.hapamag.com/july-2018-popup/specially-processed-american-me"
               >
                 –Melissa Slaughter,
-                <i>
-                  Hapa Mag
-                </i>
+                <i> Hapa Mag </i>
               </a>
             </h4>
           </div>
@@ -155,66 +145,51 @@
 
     <script>
       const workshopPhotos = new Vue({
-        el: '#workshop-photos',
+        el: "#workshop-photos",
         data: {
           imageNums: [
-            33,
-            34,
-            35,
-            36,
-            37,
-            38,
-            39,
-            40,
-            41,
-            3,
-            9,
-            12,
-            15,
-            18,
-            21,
-            28,
+            33, 34, 35, 36, 37, 38, 39, 40, 41, 3, 9, 12, 15, 18, 21, 28,
           ],
           images: [],
         },
         methods: {
           enlargeImage(event) {
-            document.getElementById('enlargedImageDiv').style.visibility =
-              'visible';
-            document.getElementById('enlargedImage').src = event.target.src;
+            document.getElementById("enlargedImageDiv").style.visibility =
+              "visible";
+            document.getElementById("enlargedImage").src = event.target.src;
             let index = event.target.src
-              .replace(/^\D+/g, '')
-              .replace('.jpg', '')
-              .replace('.png', '');
+              .replace(/^\D+/g, "")
+              .replace(".jpg", "")
+              .replace(".png", "");
             if (index == 35 || 36) {
-              document.getElementById('photo-credit').innerText = '';
+              document.getElementById("photo-credit").innerText = "";
             } else if (index == 33 || 34) {
-              document.getElementById('photo-credit').innerText =
-                'Photo courtesy of the Museum of Food and Drink';
+              document.getElementById("photo-credit").innerText =
+                "Photo courtesy of the Museum of Food and Drink";
             } else if (index == 38 || 39 || 40 || 41) {
-              document.getElementById('photo-credit').innerText =
-                'Photo courtesy of the Asian American Cultural Center at Yale University';
+              document.getElementById("photo-credit").innerText =
+                "Photo courtesy of the Asian American Cultural Center at Yale University";
             } else if (index == 37) {
-              document.getElementById('photo-credit').innerText =
-                'Photo courtesy of The Wang Center';
+              document.getElementById("photo-credit").innerText =
+                "Photo courtesy of The Wang Center";
             } else if (index <= 18) {
-              document.getElementById('photo-credit').innerText =
-                'Photo credit Andrea Januta';
+              document.getElementById("photo-credit").innerText =
+                "Photo credit Andrea Januta";
             } else {
-              document.getElementById('photo-credit').innerText =
-                'Photo credit Taj Birkett';
+              document.getElementById("photo-credit").innerText =
+                "Photo credit Taj Birkett";
             }
           },
           closeEnlargedImage(event) {
-            document.getElementById('enlargedImageDiv').style.visibility =
-              'hidden';
+            document.getElementById("enlargedImageDiv").style.visibility =
+              "hidden";
           },
         },
         created() {
           for (let imageNum of this.imageNums) {
             this.images.push({
-              source: 'images/photos-workshop/' + imageNum + '.jpg',
-              idNum: 'ph' + imageNum,
+              source: "images/photos-workshop/" + imageNum + ".jpg",
+              idNum: "ph" + imageNum,
             });
           }
         },
