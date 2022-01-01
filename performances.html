@@ -1,114 +1,119 @@
 <!DOCTYPE html>
-<html lang='en'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width,initial-scale=1' />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Specially Processed American Me</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style_new.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style_new.css" />
+  </head>
+  <body>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="js/photos.js"></script>
 
     <div class="nav">
-        <div class="page-logo">
-            <a href="./index.html"><img src="images/logo.png"></a>
-        </div>
+      <div class="page-logo">
+        <a href="./index.html"><img src="images/logo.png" /></a>
+      </div>
 
-        <div class="navItems">
-            <a href="./about.html" class="navItem">about</a>
-            <a href="./upcoming.html" class="navItem">upcoming</a>
-            <a href="./performances.html" class="navItem underlined">performances</a>
-            <a href="./workshops.html" class="navItem">workshops</a>
-            <a href="./recipes.html" class="navItem">submit a story</a>
-            <a href="./contact.html" class="navItem">contact</a>
-        </div>
-
+      <div class="navItems">
+        <a href="./about.html" class="navItem">about</a>
+        <a href="./upcoming.html" class="navItem">upcoming</a>
+        <a href="./performances.html" class="navItem underlined"
+          >performances</a
+        >
+        <a href="./workshops.html" class="navItem">workshops</a>
+        <a href="./submit-a-story.html" class="navItem">submit a story</a>
+        <a href="./contact.html" class="navItem">contact</a>
+      </div>
     </div>
 
-    <div class='pageBody' id="performance-photos">
-        <section class="eventLocations">
-            <h3>upcoming:</h3>
-	    <h4>MARCH 27 6-7:30pm, Charles B. Wang Center at Stony Brook University - 
-		<a href="https://www.cvent.com/events/2020-spring-wang-center-cultural-programs/registration-514f8d8fd9cd431782d355a1c810f677.aspx?fqp=true">
-                    Get tickets
-		</a>
-	    </h4>
-	    <h4>SEPTEMBER 2020, World Premiere commissioned by Queens Council on the Arts, TBA</h4>
-	    <h4>SEPTEMBER 16-30, The Brick - tickets TBA</h4>
-            <h3>past:</h3>
-            <div class="pastEvents">
-	        <h4>DECEMBER 14-15, HB Studio - 
-		    <a href="https://tinyurl.com/wqdcgxj">RSVP here</a>
-	        </h4>
-                <h4>Leviathan Lab at The Tank</h4>
-                <h4>Brooklyn Arts Exchange Upstart Program Showcase</h4>
-                <h4>Oye! Avant Garde Festival at JACK</h4>
-                <h4>FailSafe Festival at The Producers Club</h4>
-            </div>
-        </section>
+    <div class="pageBody" id="performance-photos">
+      <section class="eventLocations">
+        <h3>upcoming:</h3>
+        <h4>
+          World premiere at Dixon Place, January 27 - February 19 2022<br />
+          <a href="http://dixonplace.org/performances/spam/">Tickets here</a>
+        </h4>
+        <h3>past:</h3>
+        <div class="pastEvents">
+          <h4>
+            Virtual Play Reading hosted by Queens Council on the Arts and
+            Flushing Town Hall
+          </h4>
+          <h4>
+            ACP Live Showcase and Panel Discussion -
+            <a href="https://youtu.be/GWNO4QfX2ls">Watch</a>
+          </h4>
+          <h4>HB Studio Rehearsal Space Residency Presentation</h4>
+          <h4>Leviathan Lab at The Tank</h4>
+          <h4>Brooklyn Arts Exchange Upstart Program Showcase</h4>
+          <h4>Oye! Avant Garde Festival at JACK</h4>
+          <h4>FailSafe Festival at The Producers Club</h4>
+        </div>
+      </section>
 
-        <div id="enlargedImageDiv" v-on:click="closeEnlargedImage">
-          <div id="photo-credit"></div>
-          <img id="enlargedImage">
-        </div>
+      <div id="enlargedImageDiv" v-on:click="closeEnlargedImage">
+        <div id="photo-credit"></div>
+        <img id="enlargedImage" />
+      </div>
 
-        <div class="photo-container">
-        <div class="photo-subcontainer"
-             v-for="image in images"
-        >
-            <img class="photograph"
-                 v-bind:id="image.idNum"
-                 v-bind:src="image.source"
-                 v-on:click="enlargeImage"
-            >
+      <div class="photo-container">
+        <div class="photo-subcontainer" v-for="image in images">
+          <img
+            class="photograph"
+            v-bind:id="image.idNum"
+            v-bind:src="image.source"
+            v-on:click="enlargeImage"
+          />
         </div>
-        </div>
+      </div>
     </div>
 
     <script>
-     const performancePhotos = new Vue({
-       el: '#performance-photos',
-       data: {
-         imageNums: [1,2,3,4,5,6,7,8,9,10,11],
-         images: []
-       },
-       methods: {
-         enlargeImage(event) {
-           document.getElementById("enlargedImageDiv").style.visibility="visible";
-           document.getElementById("enlargedImage").src=event.target.src;
-           let index = event.target.src.replace( /^\D+/g, '').replace('.jpg', '').replace('.png', '');
-           if (index == 9 || index == 11) {
-             document.getElementById("photo-credit").innerText="Photo credit Leonardo March";
-           } else {
-             document.getElementById("photo-credit").innerText="Photo credit Mari Uchida";
-           }
-         },
-         closeEnlargedImage(event) {
-           document.getElementById("enlargedImageDiv").style.visibility="hidden";
-         }
-       },
-       created () {
-         for (let imageNum of this.imageNums) {
-           this.images.push({
-             "source": "images/photos-performance/" + imageNum + ".png",
-             "idNum": "ph" + imageNum
-           });
-         }
-       }
-     });
+      const performancePhotos = new Vue({
+        el: "#performance-photos",
+        data: {
+          imageNums: [2, 3, 5, 8, 10, 12, 15, 17, 19, 20, 26, 34, 36, 37],
+          images: [],
+        },
+        methods: {
+          enlargeImage(event) {
+            document.getElementById("enlargedImageDiv").style.visibility =
+              "visible";
+            document.getElementById("enlargedImage").src = event.target.src;
+            document.getElementById("photo-credit").innerText =
+              "Photo credit Toby Tenenbaum";
+          },
+          closeEnlargedImage(event) {
+            document.getElementById("enlargedImageDiv").style.visibility =
+              "hidden";
+          },
+        },
+        created() {
+          for (let imageNum of this.imageNums) {
+            this.images.push({
+              source: "images/photos-performance/" + imageNum + ".jpg",
+              idNum: "ph" + imageNum,
+            });
+          }
+        },
+      });
     </script>
 
     <div class="nav">
-        <div class="navItems">
-            <a href="http://eepurl.com/dxRak9" class="navItem">Newsletter</a>
-            <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem">Facebook</a>
-            <a href="https://www.instagram.com/speciallyprocessed/" class="navItem">Instagram</a>
-        </div>
+      <div class="navItems">
+        <a href="http://eepurl.com/dxRak9" class="navItem">Newsletter</a>
+        <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem"
+          >Facebook</a
+        >
+        <a href="https://www.instagram.com/speciallyprocessed/" class="navItem"
+          >Instagram</a
+        >
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
