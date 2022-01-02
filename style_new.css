@@ -127,11 +127,12 @@ body {
 .bioText {
   padding-top: 0;
   margin-left: 175px;
-  margin-top: -178px;
+  margin-top: -220px;
   min-height: 160px;
+  max-width: 60%;
 }
 .bioPic {
-  height: 150px;
+  width: 155px;
 }
 
 .section-header {
@@ -151,13 +152,7 @@ body {
     margin-left: 0;
     margin-top: 0;
     min-height: 160px;
-  }
-  .bioPic {
-    float: left;
-    margin-right: 15px;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    height: 150px;
+    max-width: 100%;
   }
 
   .section-header,
