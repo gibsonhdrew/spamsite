@@ -90,9 +90,11 @@ body {
 }
 
 .mayorsOfficeLogo {
-  min-height: 50px;
-  max-height: 50px;
-  margin-right: 25px;
+  margin-top: 8px;
+  min-height: 42px;
+  max-height: 42px;
+  margin-right: 10px;
+  padding: 4px;
 }
 
 .logos {
