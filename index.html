@@ -31,64 +31,6 @@
         z-index: -2;
       }
 
-      #premiere-modal-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: black;
-        opacity: 0.4;
-        z-index: -1;
-      }
-      #premiere-modal {
-        width: 40vw;
-        padding: 10px 10px;
-        background-color: white;
-        border-radius: 12px;
-        margin: 40px auto;
-        z-index: 300;
-        line-height: 0;
-      }
-      #premiere-modal-close {
-        position: absolute;
-        background-color: white;
-        width: 20px;
-        height: 20px;
-        text-align: center;
-        top: -40.1vw;
-        right: -40.2vw;
-        border-radius: 4px;
-        padding: 4px;
-        line-height: normal;
-        color: #444444;
-      }
-      #premiere-modal-close:hover {
-        cursor: pointer;
-        color: black;
-      }
-      .premiere-modal-img {
-        border-radius: 4px;
-        width: 100%;
-      }
-      .buytickets-link {
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.8);
-        text-align: center;
-        padding: 10px;
-        width: 170px;
-	left: 50%;
-	size: 24px;
-	transform: translate(-50%, 0%);
-        border-radius: 6px;
-        top: -15.5vw;
-        color: #0e2038;
-        font-weight: bold;
-        line-height: normal;
-      }
-      .buytickets-link:hover {
-        text-decoration: underline;
-      }
       @media screen and (min-device-width: 801px) {
         .aboutImg img {
           width: 30vw;
@@ -176,69 +118,10 @@
         .navImg:nth-child(odd) {
           margin-left: 30vw;
         }
-
-        #premiere-modal {
-          padding: 4px;
-          width: 85vw;
-          margin: 20vh auto;
-          border-radius: 6px;
-        }
-        #premiere-modal-close {
-          top: -89vw;
-          right: -88vw;
-          color: #222222;
-        }
-        .premiere-modal-img {
-          border-radius: 4px;
-          width: 100%;
-        }
-        .buytickets-link {
-          top: -32vw;
-	  size: 18px;
-	  padding: 4px 8px;;
-        }
       }
     </style>
-    <script>
-      const init = () => {
-        const modal = document.getElementById("premiere-modal");
-        const backdrop = document.getElementById("premiere-modal-backdrop");
-        const modalCloseBtn = document.getElementById("premiere-modal-close");
-        const nav = document.getElementsByClassName("nav"); // main page content
-
-        modalCloseBtn.addEventListener(
-          "click",
-          () => {
-            modal.style.visibility = "hidden";
-            backdrop.style.visibility = "hidden";
-            nav[0].style.zIndex = 1;
-          },
-          false
-        );
-      };
-
-      window.onload = init;
-    </script>
   </head>
   <body>
-    <div id="premiere-modal-backdrop"></div>
-    <div id="premiere-modal">
-      <img class="premiere-modal-img" src="./images/modal.jpg" />
-      <div style="position: relative; width: 0; height: 0">
-        <div id="premiere-modal-close">x</div>
-      </div>
-
-      <br />
-
-      <div style="position: relative; width: 0; height: 0; margin: 0 auto;">
-        <a
-          class="buytickets-link"
-          href="http://dixonplace.org/performances/spam"
-          >BUY TICKETS HERE</a
-        >
-      </div>
-    </div>
-
     <div class="nav">
       <div class="aboutImg">
         <a href="./about.html">
