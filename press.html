@@ -15,28 +15,48 @@
         <div class="page-logo">
             <a href="./index.html"><img src="images/logo.png"></a>
         </div>
-
         <div class="navItems">
             <a href="./about.html" class="navItem">about</a>
             <a href="./events.html" class="navItem">events</a>
             <a href="./performances.html" class="navItem">performances</a>
             <a href="./workshops.html" class="navItem">workshops</a>
             <a href="./submit-a-story.html" class="navItem">submit a story</a>
-            <a href="./press.html" class="navItem">press</a>
+            <a href="./press.html" class="navItem underlined">press</a>
         </div>
 
+    </div>
+    <div id='homeBody'>
+        <div class="pageBody" v-for="post in posts">
+            <h2 v-html="post.title"></h2>
+            <p v-html="post.content"></p>
+        </div>
+    </div>
+    <script>
+        const tags = {
+	    press: 2764
+        }
 
-    </div>
-    <div class='pageBody contactBody'>
-      <p>
-        For performance and workshop booking inquiries,
-	or general questions about the project, contact
-	Jaime Sunwoo at jaimesunwoo(at)gmail(dot)com 
-      </p>
-    </div>
+        const homeBody = new Vue({
+            el: '#homeBody',
+            data: {
+                posts: []
+            },
+            created () {
+                fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
+                    .then(response => response.json())
+                    .then(posts => {
+                        for (const post of posts) {
+                            if (post.tags[0] === tags.press) {
+                                this.posts.push({"title": post.title.rendered, "content": post.content.rendered})
+                            }
+                        }
+                    })
+            }
+        })
+    </script>
     <div class="nav">
         <div class="navItems">
-            <a href="./contact.html" class="navItem notBoldText underlined">contact</a>
+            <a href="./contact.html" class="navItem notBoldText">contact</a>
             <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">newsletter</a>
             <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">facebook</a>
             <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">instagram</a>

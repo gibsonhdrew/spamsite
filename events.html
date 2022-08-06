@@ -21,21 +21,27 @@
         </div>
         <div class="navItems">
             <a href="./about.html" class="navItem">about</a>
-            <a href="./upcoming.html" class="navItem underlined">upcoming</a>
+            <a href="./events.html" class="navItem underlined">events</a>
             <a href="./performances.html" class="navItem">performances</a>
             <a href="./workshops.html" class="navItem">workshops</a>
             <a href="./submit-a-story.html" class="navItem">submit a story</a>
-            <a href="./contact.html" class="navItem">contact</a>
+            <a href="./press.html" class="navItem">press</a>
         </div>
 
     </div>
     <div id='homeBody'>
-        <div class=pageBody v-for="post in posts">
+        <div class="pageBody" v-for="post in posts">
             <h2 v-html="post.title"></h2>
             <p v-html="post.content"></p>
         </div>
     </div>
     <script>
+        // TODO: remove upcoming (eventually)
+        const tags = {
+	    upcoming: 35776,
+	    events: 924
+        }
+
         const homeBody = new Vue({
             el: '#homeBody',
             data: {
@@ -44,10 +50,10 @@
             created () {
                 fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
                     .then(response => response.json())
-                    .then(json => {
-                        for (var x of json) {
-                            if (x.tags[0] == "35776") {
-                                this.posts.push({"title": x.title.rendered, "content": x.content.rendered})
+                    .then(posts => {
+                        for (const post of posts) {
+                            if ([tags.events, tags.upcoming].includes(post.tags[0])) {
+                                this.posts.push({"title": post.title.rendered, "content": post.content.rendered})
                             }
                         }
                     })
@@ -56,6 +62,7 @@
     </script>
     <div class="nav">
         <div class="navItems">
+            <a href="./contact.html" class="navItem notBoldText">contact</a>
             <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">newsletter</a>
             <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">facebook</a>
             <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">instagram</a>

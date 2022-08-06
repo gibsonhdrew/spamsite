@@ -9,11 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./style_new.css">
 </head>
+
 <body>
-    <!-- development version, includes helpful console warnings -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-    
-    <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
    </div>
     <div class='nav'>
@@ -22,17 +19,15 @@
         </div>
         <div class="navItems">
             <a href="./about.html" class="navItem">about</a>
-            <a href="./upcoming.html" class="navItem">upcoming</a>
+            <a href="./events.html" class="navItem">events</a>
             <a href="./performances.html" class="navItem">performances</a>
             <a href="./workshops.html" class="navItem">workshops</a>
             <a href="./submit-a-story.html" class="navItem underlined">submit a story</a>
-            <a href="./contact.html" class="navItem">contact</a>
+            <a href="./press.html" class="navItem">press</a>
         </div>
-
-
     </div>
-    <div id="blogBody" class='recipeBody recipeSomething'>
 
+    <div id="blogBody" class='recipeBody recipeSomething'>
         <div class="transparentBG" v-on:click="closeRecipeText"></div>
 
         <div class="recipesDiv">
@@ -55,7 +50,6 @@
     </div>
 
     <div class="pageBody">
-
         <h3>Submit your own recipe or thoughts on SPAM:</h3>
         <form class="submitRecipeForm" action="https://formspree.io/xyybbwqv" method="POST">
             <textarea class="sendRecipeAuthor" type="text" name="Your Name" placeholder="Name"></textarea><br/>
@@ -66,13 +60,16 @@
             <p>Your story will be published after it is approved. In the meantime, check out other stories hot off the skillet.</p>
         </form> 
     </div>
+
     <div class="nav">
         <div class="navItems">
+            <a href="./contact.html" class="navItem notBoldText">contact</a>
             <a href="http://eepurl.com/dxRak9" class="navItem notBoldText">newsletter</a>
             <a href="https://www.facebook.com/SpeciallyProcessed/" class="navItem notBoldText">facebook</a>
             <a href="https://www.instagram.com/speciallyprocessed/" class="navItem notBoldText">instagram</a>
         </div>
     </div>
+
     <script>
         const blogBody = new Vue({
             el: '#blogBody',
@@ -88,9 +85,11 @@
                        }
                    }
                    let chosenRecipe = document.getElementById('id'+event.target.id)
-                   chosenRecipe.style.visibility = "visible";
-                   let theTransparentBG = document.getElementsByClassName("transparentBG")
-                   theTransparentBG[0].style.visibility = "visible";
+		   if (chosenRecipe) {
+                       chosenRecipe.style.visibility = "visible";
+                       let theTransparentBG = document.getElementsByClassName("transparentBG")
+                       theTransparentBG[0].style.visibility = "visible";
+		   }
                 },
                 closeRecipeText(event) {
                    let closeAllRecipes = document.getElementsByClassName("displayRecipes")
@@ -104,15 +103,14 @@
             created () {
                 fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
                     .then(response => response.json())
-                    .then(json => {
-                        console.log(json)
+                    .then(posts => {
                         let spamPicCounter = 1
-                        for (var x of json) {
-                            if (x.tags[0] == "2832") {
+                        for (const post of posts) {
+                            if (post.tags[0] == 2832) {
                                 this.posts.push({
-                                    "id": x.id, 
-                                    "title": x.title.rendered, 
-                                    "content": x.content.rendered,
+                                    "id": post.id, 
+                                    "title": post.title.rendered, 
+                                    "content": post.content.rendered,
                                     "spamPicNumber": "./images/Slice_"+spamPicCounter+".png"
                                 })
                                 if (spamPicCounter < 15) {
