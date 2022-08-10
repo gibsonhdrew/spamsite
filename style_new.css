@@ -560,8 +560,7 @@ closeRecipeButton:hover {
   }
 }
 
-.navItem,
-.bottomNavItem {
+.navItem {
   display: inline-block;
   color: #ff626e;
   font-weight: bold;
