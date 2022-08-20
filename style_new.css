@@ -681,3 +681,19 @@ closeRecipeButton:hover {
     opacity: 1;
   }
 }
+
+#performance-quotes {
+    position: relative;
+}
+
+#performance-quotes img {
+    max-width: 100%;
+}
+
+#performance-quotes #nyt-link {
+    position: absolute;
+    top: 65%;
+    left: 45%;
+    width: 33%;
+    height: 5%;
+}
