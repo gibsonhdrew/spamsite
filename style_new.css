@@ -684,6 +684,7 @@ closeRecipeButton:hover {
 
 #performance-quotes {
     position: relative;
+    margin-bottom: 35px;
 }
 
 #performance-quotes img {
