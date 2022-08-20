@@ -683,20 +683,29 @@ closeRecipeButton:hover {
 }
 
 #performance-quotes {
-    position: relative;
-    margin-bottom: 35px;
+  position: relative;
+  margin-bottom: 35px;
+  margin: 0 auto;
+  width: 65%;
+}
+
+
+@media screen and (max-device-width: 800px) {
+  #performance-quotes {
+    width: 100%;
+  }
 }
 
 #performance-quotes img {
-    max-width: 100%;
-    min-width: 100%;
-    width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
 }
 
 #performance-quotes #nyt-link {
-    position: absolute;
-    top: 65%;
-    left: 45%;
-    width: 33%;
-    height: 5%;
+  position: absolute;
+  top: 65%;
+  left: 45%;
+  width: 33%;
+  height: 5%;
 }
