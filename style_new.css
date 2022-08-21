@@ -539,9 +539,10 @@ closeRecipeButton:hover {
   background-color: white;
 }
 
-.navItems img {
+.navItem img {
   max-height: 20px;
-  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 @media screen and (max-device-width: 800px) {
@@ -705,4 +706,34 @@ closeRecipeButton:hover {
   left: 45%;
   width: 33%;
   height: 5%;
+}
+
+#map-chefs {
+  margin-top: 15px;
+  width: 100%;
+}
+#map-chefs img {
+  margin-top: 10px;
+  width: 70%;
+}
+#map-chefs img:hover {
+  opacity: 0.8;
+}
+
+@media screen and (max-device-width: 800px) {
+  #map-chefs img {
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-device-width: 801px) {
+  .desktop-hide {
+      display: none;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  .mobile-hide {
+      display: none;
+  }
 }
