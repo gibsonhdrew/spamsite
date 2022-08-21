@@ -191,29 +191,20 @@ body {
 }
 
 .photo-subcontainer {
-  align-self: flex-start;
-  overflow: hidden;
-  height: 300px;
   position: relative;
   width: 48%;
   margin-bottom: 10px;
   border-radius: 8px;
-  display: block;
   border: 3px solid #ffcad5;
 }
 
 .photograph {
-  z-index: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
 @media screen and (max-device-width: 800px) {
   .photo-subcontainer {
-    align-self: flex-start;
-    overflow: hidden;
-    height: 100px;
-    position: relative;
     width: 45%;
     margin-bottom: 10px;
     border-radius: 8px;
