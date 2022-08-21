@@ -539,6 +539,11 @@ closeRecipeButton:hover {
   background-color: white;
 }
 
+.navItems img {
+  max-height: 20px;
+  margin-right: 5px;
+}
+
 @media screen and (max-device-width: 800px) {
   .navItems {
     justify-content: space-around;
