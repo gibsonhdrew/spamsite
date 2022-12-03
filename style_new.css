@@ -39,7 +39,30 @@ body {
   color: #333333;
 }
 
+.youtube-embed {
+  position: relative;
+  height: 0;
+  width: 65%;
+  padding-bottom: 36.56%;
+}
+
+.youtube-embed > iframe {
+  position: absolute;
+  border-radius: 10px;
+  border: 3px solid #ffcad5;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (max-device-width: 800px) {
+  .youtube-embed {
+    width: 100%;
+    padding-bottom: 56.26%;
+  }
+
   .eventLocations h3 {
     line-height: 100%;
     margin-top: 40px;
@@ -141,7 +164,7 @@ body {
 }
 
 .about-img-2 {
-  width: 44.5vw;
+  width: 65%;
 }
 
 @media screen and (max-device-width: 800px) {
