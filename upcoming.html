@@ -48,7 +48,7 @@
                 posts: []
             },
             created () {
-                fetch('https://public-api.wordpress.com/wp/v2/sites/145375323/posts/?per_page=100')
+                fetch('./old-wp-data/wp-data.json')
                     .then(response => response.json())
                     .then(posts => {
                         for (const post of posts) {
